@@ -62,3 +62,10 @@ Choices made while building MarketLens, with the reasoning. Newest sections are 
 | 29 | `gpt-6-luna` rejects function tools on Chat Completions unless `reasoning_effort="none"`. The wrapper detects that error and retries tool calls with `"none"`; non-tool calls (summaries, memos) keep `low` effort. | Found during live verification; keeps everything on Chat Completions with the one allowed model. |
 | 30 | Inline charts are built **server-side** by `render_chart`, so the plotted series are real data. The model never writes the numbers it plots. | Same "no numbers from memory" rule. |
 | 31 | AI outputs are cached in SQLite: filing summaries per accession, news narratives per headline set, Research Desk memos per ticker per day. | Saves cost; the "Regenerate" / "Re-run" buttons force a fresh call. |
+
+## Verification notes
+
+| # | Decision / note | Why |
+|---|-----------------|-----|
+| 32 | Verified in the build sandbox from a fresh clone: `make test` (79 passed in Docker), `make run` (container healthy), `make demo`, every page screenshotted, and live gpt-6-luna calls for chat, the Research Desk and the briefing. The sandbox's HTTPS proxy needed a CA added inside the image; that override was **not committed** because a normal machine doesn't need it. | So you know what was actually exercised. |
+| 33 | `make finbert` (PyTorch + transformers) was not installed in the sandbox. The code path falls back to the lexicon scorer if loading fails. | ~2 GB download; listed as TODO. |
