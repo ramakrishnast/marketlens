@@ -20,7 +20,7 @@ signals and a **scenario outlook**, SEC fundamentals and filings, news and crowd
 Requirements: Docker with Compose v2.24+.
 
 ```bash
-make run      # creates .env from .env.example if missing, builds and starts http://localhost:8000
+make run      # creates .env from .env.example if missing, builds and starts http://localhost:8000 (PORT=… to change)
 ```
 
 ```bash
@@ -36,6 +36,92 @@ Other targets: `make logs`, `make stop`, `make restart`, `make finbert` (local F
 
 Everything works **without any API keys**. Prices, news (Google News RSS), Reddit mention ranks, StockTwits, House disclosures and FRED series are all free and keyless.
 SEC EDGAR needs only a contact User-Agent. AI features show an "add an API key" message until `OPENAI_API_KEY` is set.
+
+## Deployment
+
+### Change the port
+
+The app always listens on 8000 **inside** the container. You choose the host port and bind address. When more than one is set, the first match wins:
+
+| Where | Example |
+|---|---|
+| Command line | `make run PORT=9000` |
+| Shell environment | `PORT=9000 make run` |
+| `.env` (persistent) | `PORT=9000` and optionally `HOST_BIND=0.0.0.0` |
+| Default | `PORT=8000`, `HOST_BIND=127.0.0.1` (only reachable from this machine) |
+
+```bash
+make run PORT=9000
+```
+
+```bash
+make url
+```
+
+To change the port permanently, edit `.env` and recreate the container:
+
+```bash
+echo "PORT=9000" >> .env
+```
+
+```bash
+make restart
+```
+
+To reach it from other devices on your network, or from a server's IP (use a firewall or a reverse proxy with auth; MarketLens has no login):
+
+```bash
+make run PORT=9000 HOST_BIND=0.0.0.0
+```
+
+Plain Docker Compose works the same way, because Compose reads `PORT` and `HOST_BIND` from `.env` or the environment:
+
+```bash
+PORT=9000 HOST_BIND=127.0.0.1 docker compose up -d --build
+```
+
+### Deployment commands
+
+| Command | What it does |
+|---|---|
+| `make run` | Build the image and start the container in the background |
+| `make demo` | Start, then load sample watchlists and warm every page |
+| `make restart` | Rebuild and recreate (after changing `.env`, `PORT`, `HOST_BIND`) |
+| `make deploy` | `git pull`, back up the database, rebuild, restart (`make update` is an alias) |
+| `make ps` | Container status and health (`healthy` once `/api/status` answers) |
+| `make url` | Print the URL for the current `PORT` / `HOST_BIND` |
+| `make logs` | Follow the app logs |
+| `make backup` | Consistent SQLite copy to `data/backups/marketlens-YYYYMMDD-HHMMSS.db` |
+| `make stop` | Stop and remove the container (data in `./data` is kept) |
+| `make finbert` | Rebuild with local FinBERT sentiment |
+| `make test` | Run the test-suite inside the container |
+| `make clean` | Stop and remove the locally built image |
+
+### Deploying to a server (e.g. a small VPS)
+
+```bash
+git clone https://github.com/ramakrishnast/marketlens.git
+```
+
+```bash
+cd marketlens && cp .env.example .env
+```
+
+Edit `.env` (keys, `PORT`, `HOST_BIND`), then:
+
+```bash
+make run
+```
+
+```bash
+make ps
+```
+
+- The container restarts automatically (`restart: unless-stopped`), including after a reboot once Docker starts.
+- All state (SQLite database, Hugging Face model cache, backups) lives in `./data` on the host. Back it up or move it to migrate.
+- To update later, run `make deploy`.
+- To put it behind HTTPS, keep `HOST_BIND=127.0.0.1` and point a reverse proxy (Caddy, nginx) at `127.0.0.1:$PORT`. For example, a Caddyfile line: `marketlens.example.com { reverse_proxy 127.0.0.1:9000 }`. Add basic auth there if the server is public.
+- To run two copies on one machine, give each its own directory, port and container name: `CONTAINER_NAME=marketlens2 make run PORT=9001`.
 
 ### `.env` keys
 
