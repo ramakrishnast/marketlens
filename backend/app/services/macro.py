@@ -65,7 +65,11 @@ def history(sid: str, years: int = 10) -> dict[str, Any]:
         return {"id": sid, "points": [], **meta}
     s = s[s.index >= s.index[-1] - pd.Timedelta(days=365 * years)]
     if sid == "CPIAUCSL":
-        s = (s / s.shift(12) - 1).dropna() * 100
+        # year-over-year by date (not shift(12)): FRED occasionally skips a month
+        full, _ = series(sid)
+        prior = full.reindex(full.index - pd.DateOffset(years=1), method="ffill").to_numpy()
+        yoy = pd.Series(full.to_numpy() / prior * 100 - 100, index=full.index).dropna()
+        s = yoy[yoy.index >= s.index[0]]
     if len(s) > 1500:  # daily series: weekly sampling is plenty for a chart
         s = s.resample("W").last().dropna()
     return {"id": sid, "label": MACRO_SERIES.get(sid, sid) if sid != "CPIAUCSL" else "CPI inflation, YoY (%)",
