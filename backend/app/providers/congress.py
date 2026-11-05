@@ -34,6 +34,18 @@ _TICKER = re.compile(r"\(([A-Z][A-Z0-9.\-]{0,6})\)")
 _OWNER = re.compile(r"^(SP|JT|DC)\s+")
 
 
+_TITLES = {"dr", "dr.", "mr", "mr.", "mrs", "mrs.", "ms", "ms.", "hon", "hon."}
+
+
+def _clean_name(name: str) -> str:
+    out: list[str] = []
+    for tok in name.split():
+        if tok.lower() in _TITLES or (out and out[-1].lower() == tok.lower()):
+            continue
+        out.append(tok)
+    return " ".join(out)
+
+
 def _iso_date(s: str) -> str:
     return datetime.strptime(s, "%m/%d/%Y").date().isoformat()
 
@@ -114,6 +126,7 @@ class HouseClerkProvider:
                 continue
             doc = m.findtext("DocID") or ""
             name = " ".join(x for x in [m.findtext("First"), m.findtext("Last"), m.findtext("Suffix")] if x)
+            name = _clean_name(name)
             try:
                 fdate = datetime.strptime(m.findtext("FilingDate") or "", "%m/%d/%Y").date().isoformat()
             except ValueError:

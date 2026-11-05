@@ -10,6 +10,7 @@ const Chat = lazyPage(() => import('./pages/Chat.jsx'))
 const Briefing = lazyPage(() => import('./pages/Briefing.jsx'))
 const Macro = lazyPage(() => import('./pages/Macro.jsx'))
 const Congress = lazyPage(() => import('./pages/Congress.jsx'))
+const CongressMember = lazyPage(() => import('./pages/CongressMember.jsx'))
 const Settings = lazyPage(() => import('./pages/Settings.jsx'))
 
 const NAV = [
@@ -119,6 +120,7 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/t/:ticker" element={<Ticker status={status} />} />
           <Route path="/congress" element={<Congress />} />
+          <Route path="/congress/member/:name" element={<CongressMember />} />
           <Route path="/backtest" element={<Backtest />} />
           <Route path="/chat" element={<Chat status={status} />} />
           <Route path="/briefing" element={<Briefing status={status} />} />
