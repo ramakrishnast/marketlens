@@ -61,12 +61,15 @@ def create(messages: list[dict[str, Any]], *, tools: list[dict[str, Any]] | None
         if json_mode and "response_format" not in bad:
             kwargs["response_format"] = {"type": "json_object"}
         if "reasoning_effort" not in bad:
-            kwargs["reasoning_effort"] = effort
+            # some models only allow function tools on Chat Completions with reasoning_effort="none"
+            kwargs["reasoning_effort"] = "none" if (tools and "tools_need_no_reasoning" in bad) else effort
         try:
             return client.chat.completions.create(**kwargs)
         except openai.BadRequestError as e:
             text = str(e).lower()
-            if "reasoning" in text and "reasoning_effort" in kwargs:
+            if tools and "reasoning" in text and "'none'" in text and "tools_need_no_reasoning" not in bad:
+                bad.add("tools_need_no_reasoning")
+            elif "reasoning" in text and "reasoning_effort" in kwargs:
                 bad.add("reasoning_effort")
             elif "response_format" in kwargs and ("response_format" in text or "json" in text):
                 bad.add("response_format")

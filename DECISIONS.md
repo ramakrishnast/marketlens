@@ -53,3 +53,12 @@ Choices made while building MarketLens, with the reasoning. Newest sections are 
 | 25 | Party affiliation comes from the public `unitedstates/congress-legislators` dataset, matched on district **and** last name (bundled copy as fallback). Member names are cleaned of titles and doubled first names from the House index. | The House index has no party field; districts alone mis-match after redistricting. |
 | 26 | First use seeds the DB from the bundled 2025–2026 filings (and prices for ~1,200 traded tickers) in one transaction (~5s). Live refresh then only downloads **new** DocIDs, up to 80 PDFs per run, in the background (button on the page plus the daily scheduler). | Parsing ~900 PDFs from scratch takes ~10 minutes; incremental updates take seconds. |
 | 27 | No member photos (no free licensed source wired in); initials avatars instead. No paid tiers or follow limits. | Original design that still follows your reference layout. |
+
+## AI features
+
+| # | Decision | Why |
+|---|----------|-----|
+| 28 | Ask-AI uses **OpenAI Chat Completions function calling** with 15 strict-schema tools over MarketLens's own data (quotes, price history, technicals, fundamentals, comparisons, news, filings, watchlist screens, outlook, crowd, Congress, macro, inline chart/table). Every tool result carries `as_of` and `sources`, and the UI shows tools called, sources and data dates under each answer. | The model has to fetch numbers rather than recall them. Citations and dates are collected mechanically, not trusted to the model. |
+| 29 | `gpt-6-luna` rejects function tools on Chat Completions unless `reasoning_effort="none"`. The wrapper detects that error and retries tool calls with `"none"`; non-tool calls (summaries, memos) keep `low` effort. | Found during live verification; keeps everything on Chat Completions with the one allowed model. |
+| 30 | Inline charts are built **server-side** by `render_chart`, so the plotted series are real data. The model never writes the numbers it plots. | Same "no numbers from memory" rule. |
+| 31 | AI outputs are cached in SQLite: filing summaries per accession, news narratives per headline set, Research Desk memos per ticker per day. | Saves cost; the "Regenerate" / "Re-run" buttons force a fresh call. |

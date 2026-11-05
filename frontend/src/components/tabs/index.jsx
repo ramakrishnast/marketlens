@@ -4,6 +4,7 @@ import Fundamentals from './Fundamentals.jsx'
 import Filings from './Filings.jsx'
 import News from './News.jsx'
 import Overview from './Overview.jsx'
+import ResearchDesk from './ResearchDesk.jsx'
 
 // Ticker page tabs. Each feature adds its tab here.
 export const TICKER_TABS = [
@@ -13,4 +14,5 @@ export const TICKER_TABS = [
   { id: 'news', label: 'News & Sentiment', Component: News },
   { id: 'crowd', label: 'Crowd (Reddit/StockTwits)', Component: Crowd },
   { id: 'congress', label: 'Congress', Component: CongressTab },
+  { id: 'desk', label: 'AI Research Desk', Component: ResearchDesk },
 ]
