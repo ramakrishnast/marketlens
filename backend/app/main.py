@@ -38,7 +38,9 @@ async def lifespan(app: FastAPI):
         sched.shutdown(wait=False)
 
 
-app = FastAPI(title="MarketLens", version="1.0", lifespan=lifespan)
+from .api.jsonresp import SafeJSONResponse  # noqa: E402
+
+app = FastAPI(title="MarketLens", version="1.0", lifespan=lifespan, default_response_class=SafeJSONResponse)
 
 
 @app.exception_handler(ProviderError)

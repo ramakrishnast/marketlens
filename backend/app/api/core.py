@@ -18,7 +18,7 @@ RANGES = {"3m": 63, "6m": 126, "1y": 252, "2y": 504, "5y": 1260, "max": 100000}
 
 
 @router.get("/status")
-def status() -> dict[str, Any]:
+def status():
     s = get_settings()
     from ..services import sentiment
     return {
@@ -33,7 +33,7 @@ def status() -> dict[str, Any]:
 
 
 @router.get("/search")
-def search(q: str) -> list[dict[str, Any]]:
+def search(q: str):
     return market.search(q)
 
 
@@ -47,18 +47,18 @@ class TickerIn(BaseModel):
 
 
 @router.get("/watchlists")
-def get_watchlists() -> list[dict[str, Any]]:
+def get_watchlists():
     watchlists.ensure_default()
     return watchlists.list_watchlists()
 
 
 @router.post("/watchlists")
-def create_watchlist(body: WatchlistIn) -> dict[str, Any]:
+def create_watchlist(body: WatchlistIn):
     return watchlists.create(body.name, body.tickers)
 
 
 @router.patch("/watchlists/{wid}")
-def rename_watchlist(wid: int, body: WatchlistIn) -> dict[str, Any]:
+def rename_watchlist(wid: int, body: WatchlistIn):
     try:
         return watchlists.rename(wid, body.name)
     except watchlists.NotFound as e:
@@ -66,13 +66,13 @@ def rename_watchlist(wid: int, body: WatchlistIn) -> dict[str, Any]:
 
 
 @router.delete("/watchlists/{wid}")
-def delete_watchlist(wid: int) -> dict[str, str]:
+def delete_watchlist(wid: int):
     watchlists.delete(wid)
     return {"ok": "deleted"}
 
 
 @router.post("/watchlists/{wid}/items")
-def add_item(wid: int, body: TickerIn) -> dict[str, Any]:
+def add_item(wid: int, body: TickerIn):
     try:
         return watchlists.add_ticker(wid, body.ticker)
     except watchlists.NotFound as e:
@@ -82,12 +82,12 @@ def add_item(wid: int, body: TickerIn) -> dict[str, Any]:
 
 
 @router.delete("/watchlists/{wid}/items/{ticker}")
-def remove_item(wid: int, ticker: str) -> dict[str, Any]:
+def remove_item(wid: int, ticker: str):
     return watchlists.remove_ticker(wid, ticker)
 
 
 @router.get("/watchlists/{wid}/table")
-def watchlist_table(wid: int) -> dict[str, Any]:
+def watchlist_table(wid: int):
     try:
         wl = watchlists.get(wid)
     except watchlists.NotFound as e:
@@ -96,17 +96,17 @@ def watchlist_table(wid: int) -> dict[str, Any]:
 
 
 @router.get("/market/overview")
-def overview() -> dict[str, Any]:
+def overview():
     return market.overview()
 
 
 @router.post("/refresh")
-def refresh(body: dict[str, Any] | None = None) -> dict[str, Any]:
+def refresh(body: dict[str, Any] | None = None):
     tickers = (body or {}).get("tickers") or watchlists.all_tickers()
     return {"refreshed": prices.refresh(tickers, force=True)}
 
 
-def _candles(df: pd.DataFrame) -> list[dict[str, Any]]:
+def _candles(df: pd.DataFrame):
     return [
         {"time": d.strftime("%Y-%m-%d"), "open": round(r.open, 4), "high": round(r.high, 4),
          "low": round(r.low, 4), "close": round(r.close, 4), "volume": float(r.volume)}
@@ -115,7 +115,7 @@ def _candles(df: pd.DataFrame) -> list[dict[str, Any]]:
 
 
 @router.get("/ticker/{ticker}/chart")
-def chart(ticker: str, range: str = "1y") -> dict[str, Any]:
+def chart(ticker: str, range: str = "1y"):
     t = ticker.upper()
     df = prices.daily(t)
     if df.empty:
@@ -136,7 +136,7 @@ def chart(ticker: str, range: str = "1y") -> dict[str, Any]:
 
 
 @router.get("/ticker/{ticker}/intraday")
-def intraday(ticker: str, interval: str = "5m") -> dict[str, Any]:
+def intraday(ticker: str, interval: str = "5m"):
     df, meta = prices.intraday(ticker, interval)
     if df.empty:
         return {"ticker": ticker.upper(), "bars": [], "vwap": [], "as_of": meta,
@@ -150,7 +150,7 @@ def intraday(ticker: str, interval: str = "5m") -> dict[str, Any]:
 
 
 @router.get("/ticker/{ticker}/info")
-def info(ticker: str) -> dict[str, Any]:
+def info(ticker: str):
     t = ticker.upper()
     i = prices.info(t)
     return {"ticker": t, "name": i.get("name") or market.company_name(t), **i, "data_mode": registry.mode()}

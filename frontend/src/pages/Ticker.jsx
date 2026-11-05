@@ -6,7 +6,7 @@ import { AsOf, Card, ErrorBox, Loading, Pct, Tabs, fmt, useApi } from '../compon
 import { TICKER_TABS } from '../components/tabs/index.jsx'
 
 const RANGES = ['3m', '6m', '1y', '2y', '5y', 'max']
-const DEFAULT_ON = ['sma50', 'sma200', 'rsi', 'levels']
+const DEFAULT_ON = ['sma50', 'sma200', 'rsi', 'levels', 'signals']
 
 function loadEnabled() {
   try { const v = JSON.parse(localStorage.getItem('ml-indicators')); if (Array.isArray(v)) return new Set(v) } catch { /* ignore */ }
