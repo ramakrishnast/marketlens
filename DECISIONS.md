@@ -34,3 +34,12 @@ Choices made while building MarketLens, with the reasoning. Newest sections are 
 | 16 | **FRED without a key** uses the public `fredgraph.csv` endpoint. The upcoming release calendar (CPI, jobs, GDP…) needs `FRED_API_KEY`; without it, a static FOMC schedule from `config/macro_calendar.json` is used. | Macro charts work without a key. |
 | 17 | **News**: Finnhub / Alpha Vantage when keys exist, plus Google News RSS search (no key) and optional company IR feeds (`config/ir_feeds.json`). SEC 8-Ks come from the filings tab. Only headline, source, url, time and a ≤280-char snippet are stored. | Your brief's copyright constraint. Yahoo's per-ticker RSS now returns 404. |
 | 18 | **Congress data**: House Clerk yearly disclosure index + parsing the text layer of electronic PTR PDFs. Paper (scanned) filings are listed with a link but not parsed. **Senate is TODO**: the eFD site needs an interactive terms-acceptance session, and the free community dataset stops in 2020. | Only free, official, current source. |
+
+## Backtesting
+
+| # | Decision | Why |
+|---|----------|-----|
+| 19 | **Own ~300-line engine** instead of backtesting.py / vectorbt. Long/flat only, fractional shares, fills at the next bar's open with slippage, commission as % plus fixed $ per fill. | backtesting.py is AGPL-licensed and vectorbt is heavy. A small engine makes the no-look-ahead and fee rules explicit and exactly testable (`tests/test_backtest.py`). |
+| 20 | **Custom strategies** are Python classes (`class X(Strategy): def signals(self, df)`) run with `exec` inside the container, enabled by `ALLOW_CUSTOM_STRATEGIES`. Before running, the engine recomputes signals on truncated history and **rejects any strategy whose past signals change** (look-ahead detection). | Local single-user tool: you run your own code. The truncation check catches `shift(-1)`, centered windows and the like. |
+| 21 | Signals are computed on the **full price history** (so a 200-day MA is valid on day 1 of the test window), then traded only inside the chosen date range. | Avoids artificial warm-up gaps; indicators are causal, so this adds no look-ahead. |
+| 22 | Walk-forward = a 70/30 train/test split **plus** anchored walk-forward folds (re-optimized before each fold, out-of-sample equity stitched). The heatmap is explicitly labeled in-sample. | Shows how much of an optimized result survives on unseen data. |
