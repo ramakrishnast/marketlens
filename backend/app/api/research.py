@@ -66,3 +66,21 @@ def get_filings(ticker: str):
 def get_events(ticker: str):
     return {"ticker": ticker.upper(), "upcoming": events.upcoming(ticker, 60), "next_earnings": events.next_earnings(ticker),
             "earnings_reaction": events.earnings_reactions(ticker)}
+
+
+@router.get("/{ticker}/filings/summary")
+def get_filing_summary(ticker: str, accession: str | None = None):
+    from ..services import filing_summary
+    try:
+        return filing_summary.summarize(ticker, accession, generate=False)
+    except ProviderError as e:
+        return {"ticker": ticker.upper(), "error": str(e)}
+
+
+@router.post("/{ticker}/filings/summary")
+def make_filing_summary(ticker: str, body: dict | None = None):
+    from ..services import filing_summary
+    try:
+        return filing_summary.summarize(ticker, (body or {}).get("accession"), force=bool((body or {}).get("force")))
+    except ProviderError as e:
+        return {"ticker": ticker.upper(), "error": str(e)}

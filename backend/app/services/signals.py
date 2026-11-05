@@ -169,7 +169,10 @@ def chart_markers(evts: list[dict[str, Any]]) -> list[dict[str, Any]]:
              "macd_bull_cross": "MACD↑", "macd_bear_cross": "MACD↓", "breakout_52w": "52wH", "breakdown_52w": "52wL",
              "cross_above_200": "↑200", "cross_below_200": "↓200", "unusual_volume": "Vol"}
     out = []
+    frequent = {"macd_bull_cross", "macd_bear_cross", "cross_above_200", "cross_below_200"}  # listed, not plotted
     for e in sorted(evts, key=lambda x: x["date"]):
+        if e["id"] in frequent:
+            continue
         pos, shape, color = shapes[e["bias"]]
         out.append({"time": e["date"], "position": pos, "shape": shape, "color": color, "text": short.get(e["id"], e["id"])})
     return out

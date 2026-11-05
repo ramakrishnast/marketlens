@@ -22,6 +22,11 @@ CONCEPTS: dict[str, list[tuple[str, str, str]]] = {
         ("us-gaap", "SalesRevenueGoodsNet", "USD"),
     ],
     "gross_profit": [("us-gaap", "GrossProfit", "USD")],
+    "cost_of_revenue": [
+        ("us-gaap", "CostOfRevenue", "USD"),
+        ("us-gaap", "CostOfGoodsAndServicesSold", "USD"),
+        ("us-gaap", "CostOfGoodsSold", "USD"),
+    ],
     "operating_income": [("us-gaap", "OperatingIncomeLoss", "USD")],
     "net_income": [("us-gaap", "NetIncomeLoss", "USD"), ("us-gaap", "ProfitLoss", "USD")],
     "eps_diluted": [("us-gaap", "EarningsPerShareDiluted", "USD/shares")],
@@ -210,6 +215,8 @@ def parse_company_facts(facts: dict[str, Any], max_quarters: int = 24, max_years
 
 def _ratios(row: dict[str, Any]) -> None:
     rev = row.get("revenue")
+    if row.get("gross_profit") is None and rev is not None and row.get("cost_of_revenue") is not None:
+        row["gross_profit"] = rev - row["cost_of_revenue"]
     if row.get("cfo") is not None and row.get("capex") is not None:
         row["fcf"] = row["cfo"] - row["capex"]
     debt = sum(row.get(k) or 0 for k in ("long_term_debt", "short_term_debt", "commercial_paper"))
