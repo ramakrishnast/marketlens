@@ -1,0 +1,127 @@
+{
+ "AAPL": {
+  "name": "Apple Inc.",
+  "long_name": "Apple Inc.",
+  "forward_pe": 32.823452,
+  "trailing_pe": 36.94609,
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "market_cap": 5079143284736,
+  "quote_type": "EQUITY",
+  "forward_eps": 10.64818,
+  "dividend_yield": 0.33,
+  "beta": 1.089,
+  "next_earnings": "2027-01-28"
+ },
+ "AMD": {
+  "name": "Advanced Micro Devices, Inc.",
+  "long_name": "Advanced Micro Devices, Inc.",
+  "forward_pe": 30.042128,
+  "trailing_pe": 123.42929,
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "market_cap": 797921116160,
+  "quote_type": "EQUITY",
+  "forward_eps": 16.26982,
+  "dividend_yield": 0.0,
+  "beta": 2.542,
+  "next_earnings": "2027-02-02"
+ },
+ "AMZN": {
+  "name": "Amazon.com, Inc.",
+  "long_name": "Amazon.com, Inc.",
+  "forward_pe": 24.371632,
+  "trailing_pe": 20.261234,
+  "sector": "Consumer Cyclical",
+  "industry": "Internet Retail",
+  "market_cap": 2876619096064,
+  "quote_type": "EQUITY",
+  "forward_eps": 10.91556,
+  "dividend_yield": 0.0,
+  "beta": 1.503,
+  "next_earnings": "2026-10-29"
+ },
+ "AVGO": {
+  "name": "Broadcom Inc.",
+  "long_name": "Broadcom Inc.",
+  "forward_pe": 16.721235,
+  "trailing_pe": 42.435463,
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "market_cap": 1553721065472,
+  "quote_type": "EQUITY",
+  "forward_eps": 19.46507,
+  "dividend_yield": 0.78,
+  "beta": 1.508,
+  "next_earnings": "2026-12-09"
+ },
+ "DIA": {
+  "name": "State Street SPDR Dow Jones Ind",
+  "long_name": "State Street SPDR Dow Jones Industrial Average ETF Trust",
+  "trailing_pe": 21.11497,
+  "quote_type": "ETF",
+  "dividend_yield": 1.39
+ },
+ "TSLA": {
+  "name": "Tesla, Inc.",
+  "long_name": "Tesla, Inc.",
+  "forward_pe": 178.39313,
+  "trailing_pe": 437.7159,
+  "market_cap": 1522552143872,
+  "quote_type": "EQUITY",
+  "dividend_yield": 0.0,
+  "next_earnings": "2027-01-27"
+ },
+ "TXN": {
+  "name": "Texas Instruments Incorporated",
+  "long_name": "Texas Instruments Incorporated",
+  "forward_pe": 26.936668,
+  "trailing_pe": 40.400776,
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "market_cap": 284778987520,
+  "quote_type": "EQUITY",
+  "forward_eps": 11.56379,
+  "dividend_yield": 1.95,
+  "beta": 1.388,
+  "next_earnings": "2027-01-26"
+ },
+ "WMT": {
+  "name": "Walmart Inc.",
+  "long_name": "Walmart Inc.",
+  "forward_pe": 40.034714,
+  "trailing_pe": 45.164337,
+  "sector": "Consumer Defensive",
+  "industry": "Discount Stores",
+  "market_cap": 1027945070592,
+  "quote_type": "EQUITY",
+  "forward_eps": 3.22645,
+  "dividend_yield": 0.79,
+  "beta": 0.526,
+  "next_earnings": "2026-11-19"
+ },
+ "XLB": {
+  "name": "State Street Materials Select S",
+  "long_name": "State Street Materials Select Sector SPDR ETF",
+  "trailing_pe": 22.41496,
+  "quote_type": "ETF",
+  "dividend_yield": 1.64
+ },
+ "XLY": {
+  "name": "State Street Consumer Discretio",
+  "long_name": "State Street Consumer Discretionary Select Sector SPDR ETF",
+  "trailing_pe": 25.602758,
+  "quote_type": "ETF",
+  "dividend_yield": 0.81
+ },
+ "^TNX": {
+  "name": "10-Year Bond",
+  "long_name": "CBOE Interest Rate 10 Year T Note",
+  "quote_type": "INDEX"
+ },
+ "^VIX": {
+  "name": "CBOE Volatility Index",
+  "long_name": "CBOE Volatility Index",
+  "quote_type": "INDEX"
+ }
+}

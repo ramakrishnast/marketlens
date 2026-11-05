@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        INSTALL_FINBERT: ${INSTALL_FINBERT:-0}
+    image: marketlens:latest
+    container_name: marketlens
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATA_DIR: /app/data
+    ports:
+      - "127.0.0.1:${PORT:-8000}:8000"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

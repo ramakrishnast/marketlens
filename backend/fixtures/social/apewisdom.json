@@ -1,0 +1,5402 @@
+[
+ {
+  "ticker": "MU",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 90,
+  "rank": 1,
+  "upvotes": 1291,
+  "mentions_24h_ago": 64,
+  "rank_24h_ago": 3
+ },
+ {
+  "ticker": "AMD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 56,
+  "rank": 2,
+  "upvotes": 235,
+  "mentions_24h_ago": 290,
+  "rank_24h_ago": 1
+ },
+ {
+  "ticker": "APP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 50,
+  "rank": 3,
+  "upvotes": 248,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 83
+ },
+ {
+  "ticker": "SPY",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 46,
+  "rank": 4,
+  "upvotes": 376,
+  "mentions_24h_ago": 57,
+  "rank_24h_ago": 4
+ },
+ {
+  "ticker": "SOXL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 25,
+  "rank": 5,
+  "upvotes": 316,
+  "mentions_24h_ago": 16,
+  "rank_24h_ago": 15
+ },
+ {
+  "ticker": "SNDK",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 25,
+  "rank": 6,
+  "upvotes": 1133,
+  "mentions_24h_ago": 15,
+  "rank_24h_ago": 16
+ },
+ {
+  "ticker": "TSLA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 24,
+  "rank": 7,
+  "upvotes": 386,
+  "mentions_24h_ago": 30,
+  "rank_24h_ago": 11
+ },
+ {
+  "ticker": "QCOM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 23,
+  "rank": 8,
+  "upvotes": 65,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 133
+ },
+ {
+  "ticker": "NVDA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 22,
+  "rank": 9,
+  "upvotes": 991,
+  "mentions_24h_ago": 26,
+  "rank_24h_ago": 14
+ },
+ {
+  "ticker": "QQQ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 20,
+  "rank": 10,
+  "upvotes": 128,
+  "mentions_24h_ago": 65,
+  "rank_24h_ago": 2
+ },
+ {
+  "ticker": "SPCX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 19,
+  "rank": 11,
+  "upvotes": 157,
+  "mentions_24h_ago": 17,
+  "rank_24h_ago": 18
+ },
+ {
+  "ticker": "MRVL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 13,
+  "rank": 12,
+  "upvotes": 73,
+  "mentions_24h_ago": 9,
+  "rank_24h_ago": 22
+ },
+ {
+  "ticker": "NBIS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 13,
+  "rank": 13,
+  "upvotes": 852,
+  "mentions_24h_ago": 14,
+  "rank_24h_ago": 20
+ },
+ {
+  "ticker": "INTC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 12,
+  "rank": 14,
+  "upvotes": 48,
+  "mentions_24h_ago": 34,
+  "rank_24h_ago": 5
+ },
+ {
+  "ticker": "MSFT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 11,
+  "rank": 15,
+  "upvotes": 40,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 27
+ },
+ {
+  "ticker": "GOOG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 11,
+  "rank": 16,
+  "upvotes": 66,
+  "mentions_24h_ago": 35,
+  "rank_24h_ago": 8
+ },
+ {
+  "ticker": "VOO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 11,
+  "rank": 17,
+  "upvotes": 218,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 76
+ },
+ {
+  "ticker": "AAPL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 9,
+  "rank": 18,
+  "upvotes": 40,
+  "mentions_24h_ago": 26,
+  "rank_24h_ago": 7
+ },
+ {
+  "ticker": "IREN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 9,
+  "rank": 19,
+  "upvotes": 24,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 38
+ },
+ {
+  "ticker": "GOOGL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 9,
+  "rank": 20,
+  "upvotes": 37,
+  "mentions_24h_ago": 34,
+  "rank_24h_ago": 9
+ },
+ {
+  "ticker": "DJT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 8,
+  "rank": 21,
+  "upvotes": 617,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 43
+ },
+ {
+  "ticker": "DTE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 7,
+  "rank": 22,
+  "upvotes": 41,
+  "mentions_24h_ago": 30,
+  "rank_24h_ago": 12
+ },
+ {
+  "ticker": "SMCI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 7,
+  "rank": 23,
+  "upvotes": 33,
+  "mentions_24h_ago": 40,
+  "rank_24h_ago": 6
+ },
+ {
+  "ticker": "COHR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 7,
+  "rank": 24,
+  "upvotes": 38,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 185
+ },
+ {
+  "ticker": "SOXX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 7,
+  "rank": 25,
+  "upvotes": 104,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 74
+ },
+ {
+  "ticker": "AMZN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 6,
+  "rank": 26,
+  "upvotes": 183,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 28
+ },
+ {
+  "ticker": "LITE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 6,
+  "rank": 27,
+  "upvotes": 28,
+  "mentions_24h_ago": 7,
+  "rank_24h_ago": 31
+ },
+ {
+  "ticker": "TX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 6,
+  "rank": 28,
+  "upvotes": 70,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 209
+ },
+ {
+  "ticker": "RKLB",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 6,
+  "rank": 29,
+  "upvotes": 25,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 37
+ },
+ {
+  "ticker": "ARM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 6,
+  "rank": 30,
+  "upvotes": 64,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 452
+ },
+ {
+  "ticker": "RDDT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 6,
+  "rank": 31,
+  "upvotes": 26,
+  "mentions_24h_ago": 31,
+  "rank_24h_ago": 10
+ },
+ {
+  "ticker": "CRWV",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 6,
+  "rank": 32,
+  "upvotes": 38,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 44
+ },
+ {
+  "ticker": "MCD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 5,
+  "rank": 33,
+  "upvotes": 17,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 99
+ },
+ {
+  "ticker": "IT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 5,
+  "rank": 34,
+  "upvotes": 25,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 66
+ },
+ {
+  "ticker": "MRNA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 5,
+  "rank": 35,
+  "upvotes": 21,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 68
+ },
+ {
+  "ticker": "SOXS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 5,
+  "rank": 36,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 320
+ },
+ {
+  "ticker": "ASTS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 5,
+  "rank": 37,
+  "upvotes": 27,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 25
+ },
+ {
+  "ticker": "HTZ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 5,
+  "rank": 38,
+  "upvotes": 21,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 84
+ },
+ {
+  "ticker": "NOW",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 4,
+  "rank": 39,
+  "upvotes": 14,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 65
+ },
+ {
+  "ticker": "TTWO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 4,
+  "rank": 40,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 140
+ },
+ {
+  "ticker": "IBKR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 4,
+  "rank": 41,
+  "upvotes": 34,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 48
+ },
+ {
+  "ticker": "PLTR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 4,
+  "rank": 42,
+  "upvotes": 21,
+  "mentions_24h_ago": 27,
+  "rank_24h_ago": 13
+ },
+ {
+  "ticker": "UP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 4,
+  "rank": 43,
+  "upvotes": 78,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 42
+ },
+ {
+  "ticker": "META",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 4,
+  "rank": 44,
+  "upvotes": 30,
+  "mentions_24h_ago": 11,
+  "rank_24h_ago": 19
+ },
+ {
+  "ticker": "IP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 3,
+  "rank": 45,
+  "upvotes": 28,
+  "mentions_24h_ago": 6,
+  "rank_24h_ago": 45
+ },
+ {
+  "ticker": "AM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 3,
+  "rank": 46,
+  "upvotes": 18,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 32
+ },
+ {
+  "ticker": "MAGA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 3,
+  "rank": 47,
+  "upvotes": 46,
+  "mentions_24h_ago": 6,
+  "rank_24h_ago": 52
+ },
+ {
+  "ticker": "TQQQ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 3,
+  "rank": 48,
+  "upvotes": 103,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 77
+ },
+ {
+  "ticker": "YOU",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 3,
+  "rank": 49,
+  "upvotes": 2,
+  "mentions_24h_ago": 9,
+  "rank_24h_ago": 33
+ },
+ {
+  "ticker": "AAOI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 3,
+  "rank": 50,
+  "upvotes": 15,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 461
+ },
+ {
+  "ticker": "WAY",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 3,
+  "rank": 51,
+  "upvotes": 30,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 462
+ },
+ {
+  "ticker": "PEP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 2,
+  "rank": 52,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 94
+ },
+ {
+  "ticker": "ALL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 2,
+  "rank": 53,
+  "upvotes": 34,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 39
+ },
+ {
+  "ticker": "VST",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 2,
+  "rank": 54,
+  "upvotes": 6,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "UUUU",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 2,
+  "rank": 55,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "OR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 2,
+  "rank": 56,
+  "upvotes": 17,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 236
+ },
+ {
+  "ticker": "BE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 2,
+  "rank": 57,
+  "upvotes": 20,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 73
+ },
+ {
+  "ticker": "TIL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 2,
+  "rank": 58,
+  "upvotes": 57,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 405
+ },
+ {
+  "ticker": "JNJ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 59,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 87
+ },
+ {
+  "ticker": "WMT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 60,
+  "upvotes": 40,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 60
+ },
+ {
+  "ticker": "MA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 61,
+  "upvotes": 7,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 88
+ },
+ {
+  "ticker": "BAC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 62,
+  "upvotes": 34,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "T",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 63,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 89
+ },
+ {
+  "ticker": "TSM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 64,
+  "upvotes": 16,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 90
+ },
+ {
+  "ticker": "HD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 65,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 91
+ },
+ {
+  "ticker": "KO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 66,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 92
+ },
+ {
+  "ticker": "DIS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 67,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 93
+ },
+ {
+  "ticker": "PFE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 68,
+  "upvotes": 1,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 61
+ },
+ {
+  "ticker": "CSCO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 69,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 62
+ },
+ {
+  "ticker": "BA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 70,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 95
+ },
+ {
+  "ticker": "ADBE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 71,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 96
+ },
+ {
+  "ticker": "ORCL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 72,
+  "upvotes": 65,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 23
+ },
+ {
+  "ticker": "NFLX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 73,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 97
+ },
+ {
+  "ticker": "SAP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 74,
+  "upvotes": 0,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 98
+ },
+ {
+  "ticker": "NVO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 75,
+  "upvotes": 10,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 100
+ },
+ {
+  "ticker": "COST",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 76,
+  "upvotes": 6,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 63
+ },
+ {
+  "ticker": "PYPL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 77,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "LLY",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 78,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 101
+ },
+ {
+  "ticker": "IBM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 79,
+  "upvotes": 34,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 102
+ },
+ {
+  "ticker": "UNP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 80,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "AVGO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 81,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 103
+ },
+ {
+  "ticker": "CHTR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 82,
+  "upvotes": 13,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 106
+ },
+ {
+  "ticker": "MO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 83,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 107
+ },
+ {
+  "ticker": "AMP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 84,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "AMAT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 85,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "ANET",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 86,
+  "upvotes": 2,
+  "mentions_24h_ago": 7,
+  "rank_24h_ago": 24
+ },
+ {
+  "ticker": "CAT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 87,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 110
+ },
+ {
+  "ticker": "CBOE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 88,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 109
+ },
+ {
+  "ticker": "CE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 89,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 111
+ },
+ {
+  "ticker": "CL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 90,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 112
+ },
+ {
+  "ticker": "ED",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 91,
+  "upvotes": 207,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 113
+ },
+ {
+  "ticker": "GLW",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 92,
+  "upvotes": 5,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 114
+ },
+ {
+  "ticker": "FANG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 93,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 115
+ },
+ {
+  "ticker": "DOW",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 94,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 116
+ },
+ {
+  "ticker": "EL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 95,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 118
+ },
+ {
+  "ticker": "ES",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 96,
+  "upvotes": 2,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 119
+ },
+ {
+  "ticker": "FISV",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 97,
+  "upvotes": 0,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "FOX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 98,
+  "upvotes": 15,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 106
+ },
+ {
+  "ticker": "GPS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 99,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 120
+ },
+ {
+  "ticker": "GE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 100,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 121
+ },
+ {
+  "ticker": "GM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 101,
+  "upvotes": 1947,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 122
+ },
+ {
+  "ticker": "GL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 102,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 123
+ },
+ {
+  "ticker": "HAS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 103,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 124
+ },
+ {
+  "ticker": "HPE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 104,
+  "upvotes": 3,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 64
+ },
+ {
+  "ticker": "ICE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 105,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 125
+ },
+ {
+  "ticker": "KEY",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 106,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "KLAC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 107,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 126
+ },
+ {
+  "ticker": "KR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 108,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 127
+ },
+ {
+  "ticker": "MAR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 109,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 128
+ },
+ {
+  "ticker": "NOV",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 110,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 129
+ },
+ {
+  "ticker": "NKE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 111,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 130
+ },
+ {
+  "ticker": "PH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 112,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 131
+ },
+ {
+  "ticker": "PSA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 113,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 132
+ },
+ {
+  "ticker": "DGX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 114,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 134
+ },
+ {
+  "ticker": "RSG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 115,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 136
+ },
+ {
+  "ticker": "SWKS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 116,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 138
+ },
+ {
+  "ticker": "SO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 117,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 139
+ },
+ {
+  "ticker": "UPS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 118,
+  "upvotes": 0,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 159
+ },
+ {
+  "ticker": "WDC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 119,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 141
+ },
+ {
+  "ticker": "JPM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 120,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 143
+ },
+ {
+  "ticker": "UNH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 121,
+  "upvotes": 0,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 144
+ },
+ {
+  "ticker": "XOM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 122,
+  "upvotes": 6,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "CRM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 123,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "BK",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 124,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 146
+ },
+ {
+  "ticker": "CCL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 125,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 147
+ },
+ {
+  "ticker": "CB",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 126,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 148
+ },
+ {
+  "ticker": "ETN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 127,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "RE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 128,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 148
+ },
+ {
+  "ticker": "EXPE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 129,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "IR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 130,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 149
+ },
+ {
+  "ticker": "MS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 131,
+  "upvotes": 7,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 151
+ },
+ {
+  "ticker": "PEG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 132,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 152
+ },
+ {
+  "ticker": "RL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 133,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 153
+ },
+ {
+  "ticker": "STX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 134,
+  "upvotes": 4,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "WELL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 135,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 155
+ },
+ {
+  "ticker": "BABA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 136,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 156
+ },
+ {
+  "ticker": "MT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 137,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "DB",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 138,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 159
+ },
+ {
+  "ticker": "WH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 139,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 160
+ },
+ {
+  "ticker": "ZS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 140,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "WING",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 141,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 161
+ },
+ {
+  "ticker": "WEN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 142,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 162
+ },
+ {
+  "ticker": "WB",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 143,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 163
+ },
+ {
+  "ticker": "VC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 144,
+  "upvotes": 2,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 67
+ },
+ {
+  "ticker": "VIAV",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 145,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "URBN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 146,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 164
+ },
+ {
+  "ticker": "OLED",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 147,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 165
+ },
+ {
+  "ticker": "TTD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 148,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "REAL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 149,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 168
+ },
+ {
+  "ticker": "TH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 150,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 169
+ },
+ {
+  "ticker": "STNE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 151,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 170
+ },
+ {
+  "ticker": "SEDG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 152,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 171
+ },
+ {
+  "ticker": "SIRI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 153,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 172
+ },
+ {
+  "ticker": "RIOT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 154,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 173
+ },
+ {
+  "ticker": "REPL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 155,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 174
+ },
+ {
+  "ticker": "PS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 156,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 176
+ },
+ {
+  "ticker": "PDD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 157,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 177
+ },
+ {
+  "ticker": "PHAT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 158,
+  "upvotes": 5,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "ON",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 159,
+  "upvotes": 2,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 46
+ },
+ {
+  "ticker": "MELI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 160,
+  "upvotes": 4,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "LULU",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 161,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 179
+ },
+ {
+  "ticker": "LSCC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 162,
+  "upvotes": 2,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 69
+ },
+ {
+  "ticker": "IQ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 163,
+  "upvotes": 14,
+  "mentions_24h_ago": 11,
+  "rank_24h_ago": 21
+ },
+ {
+  "ticker": "ROCK",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 164,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 181
+ },
+ {
+  "ticker": "FIVE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 165,
+  "upvotes": 34,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 182
+ },
+ {
+  "ticker": "FSLR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 166,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 183
+ },
+ {
+  "ticker": "ENPH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 167,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 184
+ },
+ {
+  "ticker": "DDOG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 168,
+  "upvotes": 5,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 40
+ },
+ {
+  "ticker": "CGNX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 169,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "CELH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 170,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 186
+ },
+ {
+  "ticker": "APPN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 171,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "AEIS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 172,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 187
+ },
+ {
+  "ticker": "NG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 173,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 188
+ },
+ {
+  "ticker": "XXII",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 174,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 189
+ },
+ {
+  "ticker": "VRT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 175,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 191
+ },
+ {
+  "ticker": "BRO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 176,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 193
+ },
+ {
+  "ticker": "CC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 177,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 194
+ },
+ {
+  "ticker": "DELL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 178,
+  "upvotes": 1,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 47
+ },
+ {
+  "ticker": "DEA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 179,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 195
+ },
+ {
+  "ticker": "ESTC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 180,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 196
+ },
+ {
+  "ticker": "HE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 181,
+  "upvotes": 11,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 198
+ },
+ {
+  "ticker": "HR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 182,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 199
+ },
+ {
+  "ticker": "MMS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 183,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 201
+ },
+ {
+  "ticker": "NYT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 184,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 202
+ },
+ {
+  "ticker": "PCI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 185,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 203
+ },
+ {
+  "ticker": "PINS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 186,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 204
+ },
+ {
+  "ticker": "POR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 187,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 205
+ },
+ {
+  "ticker": "SB",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 188,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 206
+ },
+ {
+  "ticker": "SPOT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 189,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 208
+ },
+ {
+  "ticker": "TS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 190,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 200
+ },
+ {
+  "ticker": "TPL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 191,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "WTI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 192,
+  "upvotes": 45,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 210
+ },
+ {
+  "ticker": "SU",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 193,
+  "upvotes": 4,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 70
+ },
+ {
+  "ticker": "INO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 194,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 212
+ },
+ {
+  "ticker": "GO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 195,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 213
+ },
+ {
+  "ticker": "EDIT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 196,
+  "upvotes": -5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 214
+ },
+ {
+  "ticker": "CRWD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 197,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 215
+ },
+ {
+  "ticker": "BEAT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 198,
+  "upvotes": 5,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 71
+ },
+ {
+  "ticker": "TECH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 199,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 216
+ },
+ {
+  "ticker": "BYND",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 200,
+  "upvotes": 5,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 49
+ },
+ {
+  "ticker": "LNG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 201,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 218
+ },
+ {
+  "ticker": "VAL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 202,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 219
+ },
+ {
+  "ticker": "UI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 203,
+  "upvotes": 5,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 50
+ },
+ {
+  "ticker": "UBER",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 204,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 220
+ },
+ {
+  "ticker": "TTM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 205,
+  "upvotes": -2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 222
+ },
+ {
+  "ticker": "TAL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 206,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 223
+ },
+ {
+  "ticker": "SF",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 207,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 224
+ },
+ {
+  "ticker": "SON",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 208,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 225
+ },
+ {
+  "ticker": "SNAP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 209,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 226
+ },
+ {
+  "ticker": "SSD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 210,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 227
+ },
+ {
+  "ticker": "SHOP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 211,
+  "upvotes": 1,
+  "mentions_24h_ago": 15,
+  "rank_24h_ago": 17
+ },
+ {
+  "ticker": "FOUR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 212,
+  "upvotes": 7,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "ST",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 213,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "RELX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 214,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 230
+ },
+ {
+  "ticker": "RS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 215,
+  "upvotes": 2,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 72
+ },
+ {
+  "ticker": "RTX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 216,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 231
+ },
+ {
+  "ticker": "PANW",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 217,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 233
+ },
+ {
+  "ticker": "OC",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 218,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 235
+ },
+ {
+  "ticker": "NOK",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 219,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 237
+ },
+ {
+  "ticker": "NNN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 220,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 238
+ },
+ {
+  "ticker": "MD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 221,
+  "upvotes": -3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 240
+ },
+ {
+  "ticker": "ITT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 222,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 242
+ },
+ {
+  "ticker": "ING",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 223,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 243
+ },
+ {
+  "ticker": "HBM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 224,
+  "upvotes": 8,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 51
+ },
+ {
+  "ticker": "HUBS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 225,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "HWM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 226,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "GTX",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 227,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 244
+ },
+ {
+  "ticker": "FLY",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 228,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 245
+ },
+ {
+  "ticker": "AG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 229,
+  "upvotes": 2548,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 239
+ },
+ {
+  "ticker": "FR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 230,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 247
+ },
+ {
+  "ticker": "ET",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 231,
+  "upvotes": 4,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 34
+ },
+ {
+  "ticker": "ELF",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 232,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "DT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 233,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 249
+ },
+ {
+  "ticker": "DS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 234,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 250
+ },
+ {
+  "ticker": "DEI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 235,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 251
+ },
+ {
+  "ticker": "CW",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 236,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 252
+ },
+ {
+  "ticker": "CPA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 237,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 253
+ },
+ {
+  "ticker": "NET",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 238,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 255
+ },
+ {
+  "ticker": "CVE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 239,
+  "upvotes": 11,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 258
+ },
+ {
+  "ticker": "CLS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 240,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 259
+ },
+ {
+  "ticker": "FUN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 241,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 260
+ },
+ {
+  "ticker": "CVNA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 242,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 261
+ },
+ {
+  "ticker": "CCJ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 243,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "BYD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 244,
+  "upvotes": 4,
+  "mentions_24h_ago": 7,
+  "rank_24h_ago": 29
+ },
+ {
+  "ticker": "BB",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 245,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 262
+ },
+ {
+  "ticker": "BJ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 246,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 263
+ },
+ {
+  "ticker": "GOLD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 247,
+  "upvotes": 8,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 264
+ },
+ {
+  "ticker": "AN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 248,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 265
+ },
+ {
+  "ticker": "ATR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 249,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 266
+ },
+ {
+  "ticker": "NLY",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 250,
+  "upvotes": 207,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 267
+ },
+ {
+  "ticker": "AA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 251,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 269
+ },
+ {
+  "ticker": "AGI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 252,
+  "upvotes": 3,
+  "mentions_24h_ago": 6,
+  "rank_24h_ago": 35
+ },
+ {
+  "ticker": "JD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 253,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 270
+ },
+ {
+  "ticker": "III",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 254,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 271
+ },
+ {
+  "ticker": "SNOW",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 255,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "LI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 256,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 272
+ },
+ {
+  "ticker": "DOG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 257,
+  "upvotes": 0,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 273
+ },
+ {
+  "ticker": "FPE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 258,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 274
+ },
+ {
+  "ticker": "XLE",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 259,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 275
+ },
+ {
+  "ticker": "MOM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 260,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 277
+ },
+ {
+  "ticker": "USO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 261,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 278
+ },
+ {
+  "ticker": "KORU",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 262,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 279
+ },
+ {
+  "ticker": "USFR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 263,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 283
+ },
+ {
+  "ticker": "WANT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 264,
+  "upvotes": -5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 284
+ },
+ {
+  "ticker": "JUST",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 265,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 285
+ },
+ {
+  "ticker": "PBS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 266,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 287
+ },
+ {
+  "ticker": "SCHD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 267,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 288
+ },
+ {
+  "ticker": "SMH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 268,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 289
+ },
+ {
+  "ticker": "XLK",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 269,
+  "upvotes": -2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 290
+ },
+ {
+  "ticker": "MID",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 270,
+  "upvotes": 7,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 291
+ },
+ {
+  "ticker": "VXUS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 271,
+  "upvotes": 30,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 293
+ },
+ {
+  "ticker": "IG",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 272,
+  "upvotes": 0,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 75
+ },
+ {
+  "ticker": "GLD",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 273,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 294
+ },
+ {
+  "ticker": "BIL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 274,
+  "upvotes": 34,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 295
+ },
+ {
+  "ticker": "CFA",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 275,
+  "upvotes": 2,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 53
+ },
+ {
+  "ticker": "VT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 276,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 296
+ },
+ {
+  "ticker": "MSOS",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 277,
+  "upvotes": 2,
+  "mentions_24h_ago": 10,
+  "rank_24h_ago": 30
+ },
+ {
+  "ticker": "SMB",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 278,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 297
+ },
+ {
+  "ticker": "VTI",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 279,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 298
+ },
+ {
+  "ticker": "YINN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 280,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 299
+ },
+ {
+  "ticker": "TLT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 281,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 300
+ },
+ {
+  "ticker": "TLH",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 282,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 301
+ },
+ {
+  "ticker": "SLV",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 283,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 302
+ },
+ {
+  "ticker": "FFR",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 284,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 305
+ },
+ {
+  "ticker": "SPXL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 285,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "MGK",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 286,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 306
+ },
+ {
+  "ticker": "MOAT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 287,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 308
+ },
+ {
+  "ticker": "UVXY",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 288,
+  "upvotes": 0,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "TAN",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 289,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 310
+ },
+ {
+  "ticker": "DON",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 290,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 311
+ },
+ {
+  "ticker": "PST",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 291,
+  "upvotes": 14,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 312
+ },
+ {
+  "ticker": "IWM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 292,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 313
+ },
+ {
+  "ticker": "RSP",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 293,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 315
+ },
+ {
+  "ticker": "DEM",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 294,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 316
+ },
+ {
+  "ticker": "VGT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 295,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 318
+ },
+ {
+  "ticker": "SQQQ",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 296,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 78
+ },
+ {
+  "ticker": "TECL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 297,
+  "upvotes": -1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 321
+ },
+ {
+  "ticker": "SPMO",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 298,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 322
+ },
+ {
+  "ticker": "CDL",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 299,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 323
+ },
+ {
+  "ticker": "GOAT",
+  "platform": "apewisdom:wallstreetbets",
+  "mentions": 1,
+  "rank": 300,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 324
+ },
+ {
+  "ticker": "AMD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 113,
+  "rank": 1,
+  "upvotes": 2307,
+  "mentions_24h_ago": 326,
+  "rank_24h_ago": 1
+ },
+ {
+  "ticker": "MU",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 100,
+  "rank": 2,
+  "upvotes": 1308,
+  "mentions_24h_ago": 69,
+  "rank_24h_ago": 3
+ },
+ {
+  "ticker": "APP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 57,
+  "rank": 3,
+  "upvotes": 259,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 69
+ },
+ {
+  "ticker": "SPY",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 51,
+  "rank": 4,
+  "upvotes": 390,
+  "mentions_24h_ago": 63,
+  "rank_24h_ago": 4
+ },
+ {
+  "ticker": "NVDA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 34,
+  "rank": 5,
+  "upvotes": 1075,
+  "mentions_24h_ago": 38,
+  "rank_24h_ago": 11
+ },
+ {
+  "ticker": "SNDK",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 30,
+  "rank": 6,
+  "upvotes": 1155,
+  "mentions_24h_ago": 16,
+  "rank_24h_ago": 16
+ },
+ {
+  "ticker": "TSLA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 29,
+  "rank": 7,
+  "upvotes": 437,
+  "mentions_24h_ago": 32,
+  "rank_24h_ago": 14
+ },
+ {
+  "ticker": "SPCX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 27,
+  "rank": 8,
+  "upvotes": 224,
+  "mentions_24h_ago": 18,
+  "rank_24h_ago": 20
+ },
+ {
+  "ticker": "VOO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 27,
+  "rank": 9,
+  "upvotes": 293,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 30
+ },
+ {
+  "ticker": "SOXL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 25,
+  "rank": 10,
+  "upvotes": 316,
+  "mentions_24h_ago": 16,
+  "rank_24h_ago": 17
+ },
+ {
+  "ticker": "NBIS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 25,
+  "rank": 11,
+  "upvotes": 976,
+  "mentions_24h_ago": 15,
+  "rank_24h_ago": 24
+ },
+ {
+  "ticker": "QCOM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 24,
+  "rank": 12,
+  "upvotes": 69,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 178
+ },
+ {
+  "ticker": "QQQ",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 24,
+  "rank": 13,
+  "upvotes": 132,
+  "mentions_24h_ago": 78,
+  "rank_24h_ago": 2
+ },
+ {
+  "ticker": "MSFT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 20,
+  "rank": 14,
+  "upvotes": 89,
+  "mentions_24h_ago": 15,
+  "rank_24h_ago": 21
+ },
+ {
+  "ticker": "IREN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 20,
+  "rank": 15,
+  "upvotes": 216,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 57
+ },
+ {
+  "ticker": "INTC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 19,
+  "rank": 16,
+  "upvotes": 95,
+  "mentions_24h_ago": 36,
+  "rank_24h_ago": 6
+ },
+ {
+  "ticker": "SMCI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 18,
+  "rank": 17,
+  "upvotes": 1431,
+  "mentions_24h_ago": 41,
+  "rank_24h_ago": 8
+ },
+ {
+  "ticker": "GOOG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 17,
+  "rank": 18,
+  "upvotes": 80,
+  "mentions_24h_ago": 40,
+  "rank_24h_ago": 9
+ },
+ {
+  "ticker": "DC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 16,
+  "rank": 19,
+  "upvotes": 1485,
+  "mentions_24h_ago": 7,
+  "rank_24h_ago": 36
+ },
+ {
+  "ticker": "AAPL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 14,
+  "rank": 20,
+  "upvotes": 58,
+  "mentions_24h_ago": 30,
+  "rank_24h_ago": 10
+ },
+ {
+  "ticker": "GOOGL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 14,
+  "rank": 21,
+  "upvotes": 122,
+  "mentions_24h_ago": 43,
+  "rank_24h_ago": 7
+ },
+ {
+  "ticker": "MRVL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 13,
+  "rank": 22,
+  "upvotes": 73,
+  "mentions_24h_ago": 11,
+  "rank_24h_ago": 22
+ },
+ {
+  "ticker": "HTZ",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 13,
+  "rank": 23,
+  "upvotes": 52,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 40
+ },
+ {
+  "ticker": "DJT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 13,
+  "rank": 24,
+  "upvotes": 1003,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 70
+ },
+ {
+  "ticker": "AMZN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 12,
+  "rank": 25,
+  "upvotes": 212,
+  "mentions_24h_ago": 9,
+  "rank_24h_ago": 37
+ },
+ {
+  "ticker": "SOXX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 12,
+  "rank": 26,
+  "upvotes": 112,
+  "mentions_24h_ago": 6,
+  "rank_24h_ago": 65
+ },
+ {
+  "ticker": "SGOV",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 12,
+  "rank": 27,
+  "upvotes": 62,
+  "mentions_24h_ago": 9,
+  "rank_24h_ago": 31
+ },
+ {
+  "ticker": "VST",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 10,
+  "rank": 28,
+  "upvotes": 33,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "RDDT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 10,
+  "rank": 29,
+  "upvotes": 32,
+  "mentions_24h_ago": 42,
+  "rank_24h_ago": 5
+ },
+ {
+  "ticker": "DTE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 8,
+  "rank": 30,
+  "upvotes": 42,
+  "mentions_24h_ago": 33,
+  "rank_24h_ago": 12
+ },
+ {
+  "ticker": "COHR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 8,
+  "rank": 31,
+  "upvotes": 39,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 241
+ },
+ {
+  "ticker": "MAGA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 8,
+  "rank": 32,
+  "upvotes": 67,
+  "mentions_24h_ago": 9,
+  "rank_24h_ago": 79
+ },
+ {
+  "ticker": "CD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 8,
+  "rank": 33,
+  "upvotes": 17,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 537
+ },
+ {
+  "ticker": "CRWV",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 8,
+  "rank": 34,
+  "upvotes": 42,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 71
+ },
+ {
+  "ticker": "ALL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 35,
+  "upvotes": 42,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 60
+ },
+ {
+  "ticker": "IT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 36,
+  "upvotes": 31,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 53
+ },
+ {
+  "ticker": "LITE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 37,
+  "upvotes": 29,
+  "mentions_24h_ago": 11,
+  "rank_24h_ago": 29
+ },
+ {
+  "ticker": "TX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 38,
+  "upvotes": 71,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 273
+ },
+ {
+  "ticker": "FCF",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 39,
+  "upvotes": 15,
+  "mentions_24h_ago": 13,
+  "rank_24h_ago": 25
+ },
+ {
+  "ticker": "ASTS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 40,
+  "upvotes": 34,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 35
+ },
+ {
+  "ticker": "STRL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 41,
+  "upvotes": 10,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "RKLB",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 7,
+  "rank": 42,
+  "upvotes": 26,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 56
+ },
+ {
+  "ticker": "MRNA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 6,
+  "rank": 43,
+  "upvotes": 25,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 95
+ },
+ {
+  "ticker": "VTI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 6,
+  "rank": 44,
+  "upvotes": 9,
+  "mentions_24h_ago": 22,
+  "rank_24h_ago": 15
+ },
+ {
+  "ticker": "UP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 6,
+  "rank": 45,
+  "upvotes": 1435,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 45
+ },
+ {
+  "ticker": "ARM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 6,
+  "rank": 46,
+  "upvotes": 64,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 601
+ },
+ {
+  "ticker": "MCD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 5,
+  "rank": 47,
+  "upvotes": 17,
+  "mentions_24h_ago": 6,
+  "rank_24h_ago": 48
+ },
+ {
+  "ticker": "UBER",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 5,
+  "rank": 48,
+  "upvotes": 28,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 283
+ },
+ {
+  "ticker": "AM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 5,
+  "rank": 49,
+  "upvotes": 41,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 43
+ },
+ {
+  "ticker": "SMH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 5,
+  "rank": 50,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 371
+ },
+ {
+  "ticker": "SOXS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 5,
+  "rank": 51,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 421
+ },
+ {
+  "ticker": "YOU",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 5,
+  "rank": 52,
+  "upvotes": 1,
+  "mentions_24h_ago": 10,
+  "rank_24h_ago": 34
+ },
+ {
+  "ticker": "META",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 5,
+  "rank": 53,
+  "upvotes": 31,
+  "mentions_24h_ago": 17,
+  "rank_24h_ago": 18
+ },
+ {
+  "ticker": "TSM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 54,
+  "upvotes": 22,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 47
+ },
+ {
+  "ticker": "IP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 55,
+  "upvotes": 30,
+  "mentions_24h_ago": 7,
+  "rank_24h_ago": 61
+ },
+ {
+  "ticker": "NOW",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 56,
+  "upvotes": 14,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 49
+ },
+ {
+  "ticker": "TTWO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 57,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 185
+ },
+ {
+  "ticker": "TTD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 58,
+  "upvotes": 22,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 220
+ },
+ {
+  "ticker": "IBKR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 59,
+  "upvotes": 34,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 76
+ },
+ {
+  "ticker": "OR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 60,
+  "upvotes": 16,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 101
+ },
+ {
+  "ticker": "PLTR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 61,
+  "upvotes": 21,
+  "mentions_24h_ago": 31,
+  "rank_24h_ago": 13
+ },
+ {
+  "ticker": "TQQQ",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 62,
+  "upvotes": 104,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 81
+ },
+ {
+  "ticker": "PST",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 63,
+  "upvotes": 16,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 410
+ },
+ {
+  "ticker": "GEV",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 4,
+  "rank": 64,
+  "upvotes": 12,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 619
+ },
+ {
+  "ticker": "WMT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 65,
+  "upvotes": 46,
+  "mentions_24h_ago": 11,
+  "rank_24h_ago": 27
+ },
+ {
+  "ticker": "NFLX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 66,
+  "upvotes": 12,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 130
+ },
+ {
+  "ticker": "CAT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 67,
+  "upvotes": 7,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 146
+ },
+ {
+  "ticker": "ES",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 68,
+  "upvotes": 2,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 92
+ },
+ {
+  "ticker": "ICE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 69,
+  "upvotes": 33,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 164
+ },
+ {
+  "ticker": "KMB",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 70,
+  "upvotes": 12,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 166
+ },
+ {
+  "ticker": "WDC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 71,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 187
+ },
+ {
+  "ticker": "MPLX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 72,
+  "upvotes": 12,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "HBM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 73,
+  "upvotes": 29,
+  "mentions_24h_ago": 12,
+  "rank_24h_ago": 26
+ },
+ {
+  "ticker": "ET",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 74,
+  "upvotes": 8,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 42
+ },
+ {
+  "ticker": "VT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 75,
+  "upvotes": 4,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 66
+ },
+ {
+  "ticker": "CRIS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 76,
+  "upvotes": 8,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "AAOI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 77,
+  "upvotes": 15,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 613
+ },
+ {
+  "ticker": "WAY",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 3,
+  "rank": 78,
+  "upvotes": 30,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 614
+ },
+ {
+  "ticker": "PEP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 79,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 127
+ },
+ {
+  "ticker": "CSCO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 80,
+  "upvotes": 11,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 91
+ },
+ {
+  "ticker": "ORCL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 81,
+  "upvotes": 66,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 33
+ },
+ {
+  "ticker": "AVGO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 82,
+  "upvotes": -2,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 59
+ },
+ {
+  "ticker": "ETN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 83,
+  "upvotes": 7,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 196
+ },
+ {
+  "ticker": "WH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 84,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 210
+ },
+ {
+  "ticker": "PS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 85,
+  "upvotes": 33,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 94
+ },
+ {
+  "ticker": "MELI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 86,
+  "upvotes": 10,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 234
+ },
+ {
+  "ticker": "FSLR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 87,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 239
+ },
+ {
+  "ticker": "DDOG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 88,
+  "upvotes": 12,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 63
+ },
+ {
+  "ticker": "WTI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 89,
+  "upvotes": 48,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 274
+ },
+ {
+  "ticker": "UUUU",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 90,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "BYD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 91,
+  "upvotes": 14,
+  "mentions_24h_ago": 7,
+  "rank_24h_ago": 38
+ },
+ {
+  "ticker": "BE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 92,
+  "upvotes": 20,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 104
+ },
+ {
+  "ticker": "ACA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 93,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "SNOW",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 94,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 343
+ },
+ {
+  "ticker": "IWM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 95,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 411
+ },
+ {
+  "ticker": "DEM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 96,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 416
+ },
+ {
+  "ticker": "FTC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 97,
+  "upvotes": 10,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "DOCN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 98,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 486
+ },
+ {
+  "ticker": "ANY",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 99,
+  "upvotes": 13,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 512
+ },
+ {
+  "ticker": "TIL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 100,
+  "upvotes": 57,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 538
+ },
+ {
+  "ticker": "APLD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 101,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 557
+ },
+ {
+  "ticker": "SMR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 102,
+  "upvotes": 4,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 114
+ },
+ {
+  "ticker": "NXT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 103,
+  "upvotes": 10,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 583
+ },
+ {
+  "ticker": "OMH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 104,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "MLP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 2,
+  "rank": 105,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "JNJ",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 106,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 121
+ },
+ {
+  "ticker": "MA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 107,
+  "upvotes": 17,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 122
+ },
+ {
+  "ticker": "BAC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 108,
+  "upvotes": 34,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "T",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 109,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 123
+ },
+ {
+  "ticker": "HD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 110,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 124
+ },
+ {
+  "ticker": "KO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 111,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 125
+ },
+ {
+  "ticker": "DIS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 112,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 126
+ },
+ {
+  "ticker": "PFE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 113,
+  "upvotes": 1,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 90
+ },
+ {
+  "ticker": "BA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 114,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 128
+ },
+ {
+  "ticker": "ADBE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 115,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 129
+ },
+ {
+  "ticker": "SAP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 116,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 131
+ },
+ {
+  "ticker": "NVO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 117,
+  "upvotes": 10,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 132
+ },
+ {
+  "ticker": "COST",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 118,
+  "upvotes": 4,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 72
+ },
+ {
+  "ticker": "PYPL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 119,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "LLY",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 120,
+  "upvotes": 6,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 133
+ },
+ {
+  "ticker": "IBM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 121,
+  "upvotes": 34,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 134
+ },
+ {
+  "ticker": "UNP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 122,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "LMT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 123,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 136
+ },
+ {
+  "ticker": "CHTR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 124,
+  "upvotes": 14,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 138
+ },
+ {
+  "ticker": "AIR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 125,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 139
+ },
+ {
+  "ticker": "AMT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 126,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 140
+ },
+ {
+  "ticker": "ALB",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 127,
+  "upvotes": 71,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 141
+ },
+ {
+  "ticker": "MO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 128,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 142
+ },
+ {
+  "ticker": "AMP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 129,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "AMAT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 130,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "ANET",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 131,
+  "upvotes": -7,
+  "mentions_24h_ago": 9,
+  "rank_24h_ago": 28
+ },
+ {
+  "ticker": "BKNG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 132,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "CBOE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 133,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 144
+ },
+ {
+  "ticker": "CDW",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 134,
+  "upvotes": -5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 147
+ },
+ {
+  "ticker": "CE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 135,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 148
+ },
+ {
+  "ticker": "CNC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 136,
+  "upvotes": -3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "CLX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 137,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 149
+ },
+ {
+  "ticker": "CL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 138,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 150
+ },
+ {
+  "ticker": "ED",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 139,
+  "upvotes": 207,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 151
+ },
+ {
+  "ticker": "GLW",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 140,
+  "upvotes": 5,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 152
+ },
+ {
+  "ticker": "CMI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 141,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "DE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 142,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 153
+ },
+ {
+  "ticker": "FANG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 143,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 154
+ },
+ {
+  "ticker": "DOW",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 144,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 155
+ },
+ {
+  "ticker": "EMR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 145,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "EL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 146,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 157
+ },
+ {
+  "ticker": "FISV",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 147,
+  "upvotes": 0,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "FOX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 148,
+  "upvotes": 15,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 144
+ },
+ {
+  "ticker": "FCX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 149,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "GPS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 150,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 158
+ },
+ {
+  "ticker": "GE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 151,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 159
+ },
+ {
+  "ticker": "GIS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 152,
+  "upvotes": -4,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 160
+ },
+ {
+  "ticker": "GM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 153,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 161
+ },
+ {
+  "ticker": "GL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 154,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 162
+ },
+ {
+  "ticker": "GS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 155,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "HAS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 156,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 163
+ },
+ {
+  "ticker": "HPE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 157,
+  "upvotes": 0,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 73
+ },
+ {
+  "ticker": "INTU",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 158,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 165
+ },
+ {
+  "ticker": "KEY",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 159,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "KEYS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 160,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "KLAC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 161,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 167
+ },
+ {
+  "ticker": "KR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 162,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 168
+ },
+ {
+  "ticker": "LRCX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 163,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 169
+ },
+ {
+  "ticker": "LNC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 164,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 170
+ },
+ {
+  "ticker": "MPC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 165,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 160
+ },
+ {
+  "ticker": "MAR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 166,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 171
+ },
+ {
+  "ticker": "NOV",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 167,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 172
+ },
+ {
+  "ticker": "NKE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 168,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 173
+ },
+ {
+  "ticker": "NOC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 169,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 164
+ },
+ {
+  "ticker": "NRG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 170,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "PH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 171,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 174
+ },
+ {
+  "ticker": "PSX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 172,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 175
+ },
+ {
+  "ticker": "PGR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 173,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 176
+ },
+ {
+  "ticker": "PSA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 174,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 177
+ },
+ {
+  "ticker": "PWR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 175,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "DGX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 176,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 179
+ },
+ {
+  "ticker": "RSG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 177,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 181
+ },
+ {
+  "ticker": "RMD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 178,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "SWKS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 179,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 183
+ },
+ {
+  "ticker": "SO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 180,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 184
+ },
+ {
+  "ticker": "SBUX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 181,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "UPS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 182,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 186
+ },
+ {
+  "ticker": "JPM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 183,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 189
+ },
+ {
+  "ticker": "UNH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 184,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 190
+ },
+ {
+  "ticker": "XOM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 185,
+  "upvotes": 6,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "CRM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 186,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 191
+ },
+ {
+  "ticker": "HON",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 187,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "BK",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 188,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 193
+ },
+ {
+  "ticker": "CCL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 189,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 194
+ },
+ {
+  "ticker": "CB",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 190,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 195
+ },
+ {
+  "ticker": "RE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 191,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 195
+ },
+ {
+  "ticker": "EXPE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 192,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "FMC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 193,
+  "upvotes": -1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 197
+ },
+ {
+  "ticker": "IR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 194,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 198
+ },
+ {
+  "ticker": "ISRG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 195,
+  "upvotes": 9,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "MCO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 196,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 200
+ },
+ {
+  "ticker": "MS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 197,
+  "upvotes": 8,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 93
+ },
+ {
+  "ticker": "PEG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 198,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 201
+ },
+ {
+  "ticker": "RL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 199,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 202
+ },
+ {
+  "ticker": "SPGI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 200,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 203
+ },
+ {
+  "ticker": "STX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 201,
+  "upvotes": 4,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "WELL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 202,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 205
+ },
+ {
+  "ticker": "BABA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 203,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 206
+ },
+ {
+  "ticker": "ASML",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 204,
+  "upvotes": 3,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 62
+ },
+ {
+  "ticker": "TD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 205,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 208
+ },
+ {
+  "ticker": "MT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 206,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "DB",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 207,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 209
+ },
+ {
+  "ticker": "WES",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 208,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "ZS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 209,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "XP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 210,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 211
+ },
+ {
+  "ticker": "WING",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 211,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 212
+ },
+ {
+  "ticker": "WEN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 212,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 213
+ },
+ {
+  "ticker": "WB",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 213,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 214
+ },
+ {
+  "ticker": "VC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 214,
+  "upvotes": 2,
+  "mentions_24h_ago": 8,
+  "rank_24h_ago": 41
+ },
+ {
+  "ticker": "VIAV",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 215,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "URBN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 216,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 216
+ },
+ {
+  "ticker": "OLED",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 217,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 217
+ },
+ {
+  "ticker": "QURE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 218,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 218
+ },
+ {
+  "ticker": "TTMI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 219,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "REAL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 220,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 221
+ },
+ {
+  "ticker": "TH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 221,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 222
+ },
+ {
+  "ticker": "STNE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 222,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 223
+ },
+ {
+  "ticker": "SEDG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 223,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 224
+ },
+ {
+  "ticker": "SIRI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 224,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 225
+ },
+ {
+  "ticker": "RIOT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 225,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 226
+ },
+ {
+  "ticker": "REPL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 226,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 227
+ },
+ {
+  "ticker": "PGEN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 227,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "PDD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 228,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 230
+ },
+ {
+  "ticker": "PHAT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 229,
+  "upvotes": 5,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 231
+ },
+ {
+  "ticker": "ON",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 230,
+  "upvotes": 2,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 74
+ },
+ {
+  "ticker": "MTSI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 231,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "LULU",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 232,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 235
+ },
+ {
+  "ticker": "LSCC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 233,
+  "upvotes": 2,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 96
+ },
+ {
+  "ticker": "IQ",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 234,
+  "upvotes": 14,
+  "mentions_24h_ago": 13,
+  "rank_24h_ago": 23
+ },
+ {
+  "ticker": "ISTR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 235,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 234
+ },
+ {
+  "ticker": "GH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 236,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "ROCK",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 237,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 237
+ },
+ {
+  "ticker": "FIVE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 238,
+  "upvotes": 34,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 238
+ },
+ {
+  "ticker": "ENPH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 239,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 240
+ },
+ {
+  "ticker": "CGNX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 240,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "COKE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 241,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "CELH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 242,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 242
+ },
+ {
+  "ticker": "APPN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 243,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "AMKR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 244,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "AEIS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 245,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 243
+ },
+ {
+  "ticker": "NG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 246,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 244
+ },
+ {
+  "ticker": "XXII",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 247,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 245
+ },
+ {
+  "ticker": "VRT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 248,
+  "upvotes": 6,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 247
+ },
+ {
+  "ticker": "SAN",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 249,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 250
+ },
+ {
+  "ticker": "BRO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 250,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 251
+ },
+ {
+  "ticker": "BC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 251,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 252
+ },
+ {
+  "ticker": "BWXT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 252,
+  "upvotes": 6,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 253
+ },
+ {
+  "ticker": "CC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 253,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 254
+ },
+ {
+  "ticker": "FIX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 254,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 255
+ },
+ {
+  "ticker": "DELL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 255,
+  "upvotes": 1,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 75
+ },
+ {
+  "ticker": "DKS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 256,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 257
+ },
+ {
+  "ticker": "DEA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 257,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 258
+ },
+ {
+  "ticker": "ESTC",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 258,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 259
+ },
+ {
+  "ticker": "ESI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 259,
+  "upvotes": 2,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "HE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 260,
+  "upvotes": 11,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 261
+ },
+ {
+  "ticker": "HR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 261,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 262
+ },
+ {
+  "ticker": "KDP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 262,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 263
+ },
+ {
+  "ticker": "MMS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 263,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 265
+ },
+ {
+  "ticker": "NYT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 264,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 266
+ },
+ {
+  "ticker": "PCI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 265,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 267
+ },
+ {
+  "ticker": "PINS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 266,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 268
+ },
+ {
+  "ticker": "POR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 267,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 269
+ },
+ {
+  "ticker": "SB",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 268,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 270
+ },
+ {
+  "ticker": "SPOT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 269,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 272
+ },
+ {
+  "ticker": "TS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 270,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 261
+ },
+ {
+  "ticker": "TPL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 271,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "SU",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 272,
+  "upvotes": 4,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 97
+ },
+ {
+  "ticker": "INO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 273,
+  "upvotes": 1,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 77
+ },
+ {
+  "ticker": "GO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 274,
+  "upvotes": 8,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 276
+ },
+ {
+  "ticker": "EDIT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 275,
+  "upvotes": 0,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 277
+ },
+ {
+  "ticker": "CRWD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 276,
+  "upvotes": 4,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 98
+ },
+ {
+  "ticker": "BEAT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 277,
+  "upvotes": 5,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 99
+ },
+ {
+  "ticker": "TECH",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 278,
+  "upvotes": 5,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 279
+ },
+ {
+  "ticker": "BYND",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 279,
+  "upvotes": 5,
+  "mentions_24h_ago": 3,
+  "rank_24h_ago": 78
+ },
+ {
+  "ticker": "CAR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 280,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 281
+ },
+ {
+  "ticker": "LNG",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 281,
+  "upvotes": 1,
+  "mentions_24h_ago": 2,
+  "rank_24h_ago": 100
+ },
+ {
+  "ticker": "VALE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 282,
+  "upvotes": 3,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "VAL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 283,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 282
+ },
+ {
+  "ticker": "UI",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 284,
+  "upvotes": 5,
+  "mentions_24h_ago": 5,
+  "rank_24h_ago": 50
+ },
+ {
+  "ticker": "TWO",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 285,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 284
+ },
+ {
+  "ticker": "TT",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 286,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 286
+ },
+ {
+  "ticker": "TR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 287,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 287
+ },
+ {
+  "ticker": "TTM",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 288,
+  "upvotes": 3,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 288
+ },
+ {
+  "ticker": "TAL",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 289,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 289
+ },
+ {
+  "ticker": "SF",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 290,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 290
+ },
+ {
+  "ticker": "SON",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 291,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 291
+ },
+ {
+  "ticker": "SNAP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 292,
+  "upvotes": 9,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 292
+ },
+ {
+  "ticker": "SSD",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 293,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 293
+ },
+ {
+  "ticker": "SHOP",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 294,
+  "upvotes": 1,
+  "mentions_24h_ago": 16,
+  "rank_24h_ago": 19
+ },
+ {
+  "ticker": "FOUR",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 295,
+  "upvotes": 7,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "ST",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 296,
+  "upvotes": 1,
+  "mentions_24h_ago": null,
+  "rank_24h_ago": 0
+ },
+ {
+  "ticker": "SA",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 297,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 283
+ },
+ {
+  "ticker": "SE",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 298,
+  "upvotes": 1,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 295
+ },
+ {
+  "ticker": "RELX",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 299,
+  "upvotes": 2,
+  "mentions_24h_ago": 1,
+  "rank_24h_ago": 296
+ },
+ {
+  "ticker": "RS",
+  "platform": "apewisdom:all-stocks",
+  "mentions": 1,
+  "rank": 300,
+  "upvotes": 2,
+  "mentions_24h_ago": 4,
+  "rank_24h_ago": 64
+ }
+]

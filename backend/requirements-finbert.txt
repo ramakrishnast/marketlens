@@ -1,0 +1,4 @@
+# Optional: local FinBERT sentiment (~2 GB with CPU PyTorch). Installed by `make finbert`.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+transformers>=4.44
