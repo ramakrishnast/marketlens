@@ -132,7 +132,8 @@ export function TradeRow({ t, showMember }) {
     <tr>
       {showMember && <td><button className="hover:underline text-left" onClick={() => nav(memberPath(t.member))}>{t.member}</button></td>}
       <td>{t.ticker ? <Link className="font-mono font-semibold hover:underline" to={`/t/${t.ticker}`}>{t.ticker}</Link> : <span className="text-muted">—</span>}<div className="text-[11px] text-muted max-w-[220px] truncate">{t.asset}</div></td>
-      <td><span className={t.tx_type === 'buy' ? 'text-up' : t.tx_type === 'sell' ? 'text-down' : 'text-warn'}>{t.tx_type === 'buy' ? 'Bought' : t.tx_type === 'sell' ? 'Sold' : 'Exchange'}</span>{t.owner !== 'self' && <div className="label normal-case">{t.owner}</div>}</td>
+      <td><span className={t.tx_type === 'buy' ? 'text-up' : t.tx_type === 'sell' ? 'text-down' : 'text-warn'}>{t.tx_type === 'buy' ? 'Bought' : t.tx_type === 'sell' ? 'Sold' : 'Exchange'}</span>{t.owner !== 'self' && <div className="label normal-case">{t.owner}</div>}
+        {t.account && <div className="text-[10px] text-muted max-w-[150px] truncate" title={`Account: ${t.account}`}>{t.account}</div>}</td>
       <td className="font-mono text-xs">{t.tx_date}</td><td className="font-mono text-xs">{t.disclosure_date}</td>
       <td className="num text-xs">{money(t.amount_low, t.amount_high)}</td>
       <td><a className="text-xs text-muted hover:underline" href={t.url} target="_blank" rel="noreferrer">House filing ↗</a></td>

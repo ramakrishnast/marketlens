@@ -186,6 +186,36 @@ def cap_congress(years: list[int]) -> None:
     log.info("congress: %d trades, %d tickers priced", len(trades), len(data))
 
 
+def cap_congress_accounts() -> None:
+    """Re-parse the PDFs already in the bundled House sample and add each trade's account (no new filings, prices untouched)."""
+    from app.providers.base import CongressFiling
+
+    path = FIXTURES_DIR / "congress" / "house.json.gz"
+    with gzip.open(path, "rt") as f:
+        data = json.load(f)
+    hp = HouseClerkProvider()
+    by_doc: dict[str, list[dict]] = {}
+    for t in data["trades"]:
+        by_doc.setdefault(t["doc_id"], []).append(t)
+    filings = {f["doc_id"]: f for f in data["filings"]}
+    for i, (doc, rows) in enumerate(by_doc.items()):
+        try:
+            parsed = hp.trades(CongressFiling(**filings[doc]))
+        except Exception as e:
+            log.warning("accounts %s: %s", doc, e)
+            continue
+        if len(parsed) != len(rows):
+            log.warning("accounts %s: parsed %d trades but fixture has %d; skipped", doc, len(parsed), len(rows))
+            continue
+        for row, p in zip(rows, parsed):
+            row["account"] = p.account
+        if i % 50 == 0:
+            log.info("  %d/%d filings", i, len(by_doc))
+        time.sleep(0.2)
+    write_json(path, data)
+    log.info("accounts added for %d filings", len(by_doc))
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="prices,edgar,news,macro,social,congress")
@@ -194,6 +224,9 @@ def main() -> None:
     parts = a.only.split(",")
     if "edgar" in parts and not os.environ.get("SEC_USER_AGENT"):
         sys.exit("Set SEC_USER_AGENT to capture EDGAR fixtures")
+    if "congress-accounts" in parts:
+        cap_congress_accounts()
+        return
     for name in ["prices", "edgar", "news", "macro", "social", "congress"]:
         if name in parts:
             log.info("=== %s ===", name)

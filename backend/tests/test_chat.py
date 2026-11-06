@@ -106,3 +106,18 @@ def test_chat_without_key_returns_message(fresh_db):
 def test_research_desk_without_key(client):
     r = client.post("/api/ticker/AAPL/research").json()
     assert r["needs_key"] is True
+
+
+def test_dead_placeholder_links_are_removed():
+    out = chat.clean_answer("AAPL is above. ([MarketLens screen](#)) See [Yahoo](https://finance.yahoo.com/quote/AAPL).")
+    assert "(#)" not in out and "[MarketLens screen]" not in out and "MarketLens screen" in out
+    assert "[Yahoo](https://finance.yahoo.com/quote/AAPL)" in out
+
+
+def test_watchlist_screen_cites_real_urls(fresh_db):
+    from app.services import watchlists
+
+    watchlists.create("W", ["AAPL", "MSFT"])
+    res = chat_tools.call("screen_watchlist", {"condition": "above_sma200", "watchlist": None})
+    assert res["sources"] and all(s["url"].startswith("https://") for s in res["sources"])
+    assert chat_tools.call("get_watchlists", {})["sources"] == []  # internal data: nothing to link, so nothing to fake

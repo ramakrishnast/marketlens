@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from datetime import date
 from typing import Any
 
@@ -22,13 +23,17 @@ Rules:
 1. Get every number (prices, returns, ratios, dates, counts) from tool calls in this conversation. Never state
    figures from memory. If a tool lacks the data, say so.
 2. Cite as you go: after a claim, add a markdown link to the source URL from the tool result, e.g. ([Reuters](url)),
-   and mention data dates ("as of 2026-11-04 close").
+   and mention data dates ("as of 2026-11-04 close"). Only link URLs that appear in tool results; never invent a
+   link or write a placeholder such as (#). Internal MarketLens data (watchlists) needs no link: just say it is from
+   the user's watchlist.
 3. For "why did X move" questions: call get_price_history to find the move dates, then get_news for those dates,
    and connect only what the headlines support. Say when the cause is unclear.
 4. You never give buy/sell/hold recommendations, price targets or position sizes. For "should I buy/sell X" or
    timing questions, call get_outlook (and other tools as needed), lay out the data, bull and bear cases, dated
    catalysts and risks, then say plainly that the decision is the user's and that this is not advice.
-5. Crowd/Reddit data is unverified opinion; label it as such. Congress trades are disclosures, not signals.
+5. Congress trades: several rows that look identical (same stock, date and amount) are usually separate trades in
+   different accounts; use each row's "account" field to tell them apart rather than calling them duplicates.
+   Crowd/Reddit data is unverified opinion; label it as such. Congress trades are disclosures, not signals.
 6. Use render_chart or render_table when a visual helps (comparisons, screens). Keep answers concise: short
    paragraphs and bullet points, markdown tables where useful.
 """
@@ -62,7 +67,7 @@ def answer(history: list[dict[str, str]], question: str) -> dict[str, Any]:
         msg = resp.choices[0].message
         calls = getattr(msg, "tool_calls", None) or []
         if not calls:
-            return {"answer": (msg.content or "").strip(), "tool_calls": tool_log, "sources": _dedupe(sources),
+            return {"answer": clean_answer((msg.content or "").strip()), "tool_calls": tool_log, "sources": _dedupe(sources),
                     "as_of": as_of, "visuals": visuals, "model": llm.model(), "ai_generated": True}
         messages.append({"role": "assistant", "content": msg.content or "",
                          "tool_calls": [{"id": c.id, "type": "function", "function": {"name": c.function.name, "arguments": c.function.arguments}} for c in calls]})
@@ -82,6 +87,16 @@ def answer(history: list[dict[str, str]], question: str) -> dict[str, Any]:
             messages.append({"role": "tool", "tool_call_id": c.id, "content": _trim(result)})
     return {"answer": "I couldn't finish within the tool-call limit. Try a narrower question.", "tool_calls": tool_log,
             "sources": _dedupe(sources), "as_of": as_of, "visuals": visuals, "model": llm.model()}
+
+
+_DEAD_LINK = re.compile(r"\[([^\]]+)\]\(\s*(?:#|about:blank|\)?)\s*\)")
+_EMPTY_PARENS = re.compile(r"\(\s*[;,·]?\s*\)")
+
+
+def clean_answer(text: str) -> str:
+    """Remove placeholder links like [source](#) that point nowhere, keeping the link text."""
+    text = _DEAD_LINK.sub(r"\1", text)
+    return _EMPTY_PARENS.sub("", text).replace("  ", " ")
 
 
 def _dedupe(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:

@@ -80,6 +80,7 @@ class CongressTrade:
     amount_low: float | None
     amount_high: float | None
     url: str
+    account: str = ""  # brokerage/account the trade was made in (the filing's "Subholding Of" line)
     extra: dict[str, Any] = field(default_factory=dict)
 
 

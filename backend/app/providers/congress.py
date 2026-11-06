@@ -79,6 +79,8 @@ def parse_ptr_text(text: str, filing: CongressFiling) -> list[CongressTrade]:
             buf = []
             continue
         if _META.match(line):
+            if re.match(r"^S O\s*:", line) and trades and not trades[-1].account:
+                trades[-1].account = line.split(":", 1)[1].strip()  # "Subholding Of": which account made the trade
             buf = []
             continue
         buf.append(line)

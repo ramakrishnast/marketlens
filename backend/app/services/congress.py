@@ -23,7 +23,7 @@ import pandas as pd
 from .. import db
 from ..config import FIXTURES_DIR
 from ..providers import registry
-from ..providers.base import CongressTrade
+from ..providers.base import CongressFiling, CongressTrade
 from . import prices
 
 log = logging.getLogger(__name__)
@@ -52,8 +52,8 @@ def _store(filings, trades) -> None:
             n = counters.get(t.doc_id, 0)
             counters[t.doc_id] = n + 1
             rows.append((_tid(t, n), t.doc_id, t.chamber, clean_name(t.member), t.state_dst, t.owner, t.ticker, t.asset, t.asset_type,
-                         t.tx_type, t.tx_date, t.disclosure_date, t.amount_low, t.amount_high, t.url))
-        c.executemany("INSERT OR IGNORE INTO congress_trades VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", rows)
+                         t.tx_type, t.tx_date, t.disclosure_date, t.amount_low, t.amount_high, t.url, t.account))
+        c.executemany("INSERT OR IGNORE INTO congress_trades VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", rows)
 
 
 def ensure_seeded() -> None:
@@ -108,13 +108,38 @@ def refresh(max_pdfs: int = MAX_PDFS_PER_REFRESH) -> dict[str, Any]:
         new_f.append(f)
         new_t += ts
     _store(new_f, new_t)
-    db.log_fetch("congress:house", "live", f"{len(new_f)} new filings")
+    backfilled = backfill_accounts()
+    db.log_fetch("congress:house", "live", f"{len(new_f)} new filings, {backfilled} backfilled")
     tickers = sorted({t.ticker for t in new_t if t.ticker})
     if tickers:
         prices.refresh(tickers)
     with db.tx() as c:
         c.execute("DELETE FROM kv_cache WHERE key LIKE 'congress:board:%'")
     return {"new_filings": len(new_f), "new_trades": len(new_t), "remaining": max(0, len([f for f in filings if f.doc_id not in known]) - len(todo))}
+
+
+def backfill_accounts(max_pdfs: int = 40) -> int:
+    """Fill in the account name for trades stored before it was captured (NULL = not yet looked at, '' = none listed)."""
+    docs = db.query("SELECT doc_id FROM congress_trades WHERE account IS NULL GROUP BY doc_id ORDER BY MAX(disclosure_date) DESC LIMIT ?",
+                    (max_pdfs,))
+    done = 0
+    for d in docs:
+        f = db.query_one("SELECT * FROM congress_filings WHERE doc_id=?", (d["doc_id"],))
+        if not f:
+            continue
+        filing = CongressFiling(doc_id=f["doc_id"], chamber=f["chamber"], member=f["member"], state_dst=f["state_dst"],
+                                filing_date=f["filing_date"], url=f["url"])
+        try:
+            trades = registry.congress().trades(filing)
+        except Exception as e:
+            log.info("account backfill %s skipped: %s", d["doc_id"], e)
+            continue
+        with db.tx() as c:
+            c.executemany("UPDATE congress_trades SET account=? WHERE id=? AND account IS NULL",
+                          [(t.account, _tid(t, n)) for n, t in enumerate(trades)])
+            c.execute("UPDATE congress_trades SET account='' WHERE doc_id=? AND account IS NULL", (d["doc_id"],))
+        done += 1
+    return done
 
 
 # ---- parties --------------------------------------------------------------------------------
@@ -171,6 +196,26 @@ def clean_name(name: str) -> str:
 
 # ---- analytics ------------------------------------------------------------------------------
 
+_KEY = ["member", "ticker", "asset", "tx_type", "tx_date", "amount_low", "amount_high", "owner", "account"]
+
+
+def collapse_refilings(df: pd.DataFrame) -> pd.DataFrame:
+    """Drop trades that were reported again in another filing (amended or re-filed reports), keeping the earliest.
+
+    Rows that look identical *within one filing* are kept: they are usually separate trades in different accounts
+    (each purchase in a different brokerage account is its own line). So we only collapse across filings, and only up
+    to the largest number of identical rows any single filing reports.
+    """
+    if df.empty or df["doc_id"].nunique() < 2:
+        return df
+    d = df.copy()
+    d["_key"] = ["|".join(map(str, r)) for r in d[_KEY].itertuples(index=False)]  # str() makes None/NaN comparable
+    d["_occ"] = d.groupby(["_key", "doc_id"]).cumcount()
+    d = d.sort_values(["disclosure_date", "doc_id"], kind="stable")
+    d = d[~d.duplicated(subset=["_key", "_occ"], keep="first")]
+    return d.drop(columns=["_key", "_occ"]).sort_index()
+
+
 def _trades_df(since: str | None = None, member: str | None = None, ticker: str | None = None) -> pd.DataFrame:
     ensure_seeded()
     sql = "SELECT * FROM congress_trades WHERE 1=1"
@@ -187,6 +232,7 @@ def _trades_df(since: str | None = None, member: str | None = None, ticker: str 
     df = pd.DataFrame(db.query(sql, p))
     if df.empty:
         return df
+    df = collapse_refilings(df)
     df["weight"] = df[["amount_low", "amount_high"]].mean(axis=1, skipna=True).fillna(df["amount_low"]).fillna(1000.0)
     df["tx_date"] = pd.to_datetime(df["tx_date"])
     df["disclosure_date"] = pd.to_datetime(df["disclosure_date"])
@@ -457,7 +503,7 @@ def member_detail(member: str, period: str = "6m") -> dict[str, Any]:
         ok = s is not None
         copy_ok = ok and s.ret_copy is not None and not pd.isna(s.ret_copy)
         trades.append({
-            "ticker": r.ticker, "asset": r.asset, "asset_type": r.asset_type, "owner": r.owner, "tx_type": r.tx_type,
+            "ticker": r.ticker, "asset": r.asset, "asset_type": r.asset_type, "owner": r.owner, "account": r.account if isinstance(r.account, str) else None, "tx_type": r.tx_type,
             "tx_date": r.tx_date.strftime("%Y-%m-%d"), "disclosure_date": r.disclosure_date.strftime("%Y-%m-%d"),
             "delay_days": int((r.disclosure_date - r.tx_date).days), "amount_low": r.amount_low, "amount_high": r.amount_high,
             "url": r.url, "price_trade": px_at(r.ticker, r.tx_date) if r.ticker else None,
@@ -518,7 +564,7 @@ def for_ticker(ticker: str) -> dict[str, Any]:
     rows = []
     for r in df.sort_values("tx_date", ascending=False).itertuples():
         rows.append({"member": r.member, "party": party_of(r.member, r.state_dst), "chamber": r.chamber, "owner": r.owner,
-                     "tx_type": r.tx_type, "tx_date": r.tx_date.strftime("%Y-%m-%d"), "disclosure_date": r.disclosure_date.strftime("%Y-%m-%d"),
+                     "account": r.account if isinstance(r.account, str) else None, "tx_type": r.tx_type, "tx_date": r.tx_date.strftime("%Y-%m-%d"), "disclosure_date": r.disclosure_date.strftime("%Y-%m-%d"),
                      "amount_low": r.amount_low, "amount_high": r.amount_high, "url": r.url})
     return {"ticker": ticker.upper(), "trades": rows, "label": LABEL}
 

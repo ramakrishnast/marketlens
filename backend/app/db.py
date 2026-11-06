@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS congress_filings (
 CREATE TABLE IF NOT EXISTS congress_trades (
     id TEXT PRIMARY KEY, doc_id TEXT, chamber TEXT, member TEXT, state_dst TEXT, owner TEXT,
     ticker TEXT, asset TEXT, asset_type TEXT, tx_type TEXT, tx_date TEXT, disclosure_date TEXT,
-    amount_low REAL, amount_high REAL, url TEXT
+    amount_low REAL, amount_high REAL, url TEXT, account TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_congress_member ON congress_trades(member);
 CREATE INDEX IF NOT EXISTS idx_congress_ticker ON congress_trades(ticker);
@@ -141,6 +141,10 @@ def _parse_tables() -> dict[str, dict[str, list[str]]]:
 
 
 TABLES = _parse_tables()
+
+# Columns added after the first release. CREATE TABLE IF NOT EXISTS leaves existing tables alone, so these are
+# applied to databases created by older versions.
+MIGRATIONS: list[tuple[str, str, str]] = [("congress_trades", "account", "TEXT")]
 _INSERT_OR = re.compile(r"^\s*INSERT\s+OR\s+(REPLACE|IGNORE)\s+INTO\s+(\w+)\s*(\(([^)]*)\))?", re.I)
 
 
@@ -192,6 +196,9 @@ def _sqlite_conn() -> sqlite3.Connection:
         with _init_lock:
             if path not in _initialized:
                 conn.executescript(SCHEMA)
+                for table, col, typ in MIGRATIONS:
+                    if col not in {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}:
+                        conn.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
                 conn.commit()
                 _initialized.add(path)
     return conn
@@ -250,6 +257,8 @@ def _pg_pool():
                 for stmt in schema_for_postgres().split(";"):
                     if stmt.strip():
                         conn.execute(stmt)
+                for table, col, typ in MIGRATIONS:
+                    conn.execute(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {col} {typ}")
             finally:
                 conn.execute("SELECT pg_advisory_unlock(727001)")
         return pool

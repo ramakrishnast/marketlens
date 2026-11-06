@@ -173,11 +173,12 @@ def tool_screen_watchlist(condition: str, watchlist: str | None = None) -> dict[
     others = [r["ticker"] for r in rows if not r.get("error") and not fn(r)]
     return {"condition": label, "watchlists": [w["name"] for w in wls], "matches": matches, "not_matching": others,
             "as_of": {r["ticker"]: (r.get("as_of") or {}).get("last_bar") for r in rows},
-            "sources": [_src("Yahoo Finance daily prices via yfinance; MarketLens indicators")]}
+            "sources": [_price_src(r["ticker"]) for r in rows if not r.get("error")][:12]}
 
 
 def tool_get_watchlists() -> dict[str, Any]:
-    return {"watchlists": watchlists.list_watchlists(), "as_of": None, "sources": [_src("MarketLens watchlists")]}
+    return {"watchlists": watchlists.list_watchlists(), "as_of": None, "sources": [],
+            "notes": "Internal MarketLens data (your saved watchlists); there is no URL to cite."}
 
 
 def tool_get_outlook(ticker: str) -> dict[str, Any]:

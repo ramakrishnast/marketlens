@@ -131,7 +131,8 @@ export default function CongressMember() {
                 <td>{t.ticker ? <Link to={`/t/${t.ticker}`} className="font-mono font-semibold hover:underline">{t.ticker}</Link> : '—'}</td>
                 <td className="max-w-[260px] truncate" title={t.asset}>{t.asset.replace(/\s*\([A-Z.]+\)\s*$/, '')}</td>
                 <td><span className={t.tx_type === 'buy' ? 'text-up' : t.tx_type === 'sell' ? 'text-down' : 'text-warn'}>{t.tx_type === 'buy' ? 'Bought' : t.tx_type === 'sell' ? 'Sold' : 'Exchange'}</span>
-                  {t.owner !== 'self' && <div><span className="label border border-line rounded px-1 normal-case">{t.owner}</span></div>}</td>
+                  {t.owner !== 'self' && <div><span className="label border border-line rounded px-1 normal-case">{t.owner}</span></div>}
+                  {t.account && <div className="text-[10px] text-muted max-w-[150px] truncate" title={`Account: ${t.account}`}>{t.account}</div>}</td>
                 <td className="font-mono text-xs">{t.tx_date}</td><td className="font-mono text-xs">{t.disclosure_date}</td>
                 <td className="num font-semibold">{t.delay_days}d</td>
                 <td className="num text-xs">{money(t.amount_low, t.amount_high)}</td>
