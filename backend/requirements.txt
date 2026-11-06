@@ -9,4 +9,5 @@ feedparser==6.0.14
 apscheduler==3.11.3
 openai==3.46.0
 pypdf==6.21.4
+psycopg[binary,pool]==3.3.8
 pytest>=8.0

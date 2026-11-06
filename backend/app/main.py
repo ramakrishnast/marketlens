@@ -10,6 +10,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+from . import db
 from .config import REPO_DIR, get_settings
 from .providers.base import ProviderError
 
@@ -25,7 +26,7 @@ FRONTEND_DIST = Path(os.environ.get("FRONTEND_DIST", REPO_DIR / "frontend" / "di
 async def lifespan(app: FastAPI):
     s = get_settings()
     log.info("MarketLens starting: DATA_MODE=%s, AI=%s, db=%s", s.data_mode,
-             f"OpenAI {s.openai_model}" if s.ai_enabled else "off (no OPENAI_API_KEY)", s.db_path)
+             f"OpenAI {s.openai_model}" if s.ai_enabled else "off (no OPENAI_API_KEY)", db.describe()["target"])
     sched = None
     if s.scheduler_enabled and os.environ.get("MARKETLENS_TESTING") != "1":
         try:
@@ -36,6 +37,7 @@ async def lifespan(app: FastAPI):
     yield
     if sched is not None:
         sched.shutdown(wait=False)
+    db.reset_connection()
 
 
 from .api.jsonresp import SafeJSONResponse  # noqa: E402

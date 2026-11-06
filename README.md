@@ -28,7 +28,7 @@ make demo     # loads the sample watchlist (SPY QQQ AAPL MSFT NVDA AMD GOOGL AMZ
 ```
 
 ```bash
-make test     # runs the test-suite inside the container: offline, bundled sample data, no keys
+make test     # runs the test-suite inside the container on SQLite and Postgres: offline, bundled sample data, no keys
 ```
 
 Other targets: `make logs`, `make stop`, `make restart`, `make finbert` (local FinBERT sentiment, ~2 GB), `make fixtures`
@@ -88,13 +88,17 @@ PORT=9000 HOST_BIND=127.0.0.1 docker compose up -d --build
 | `make demo` | Start, then load sample watchlists and warm every page |
 | `make restart` | Rebuild and recreate (after changing `.env`, `PORT`, `HOST_BIND`) |
 | `make deploy` | `git pull`, back up the database, rebuild, restart (`make update` is an alias) |
-| `make ps` | Container status and health (`healthy` once `/api/status` answers) |
+| `make ps` | Status and health of the app and the database containers |
 | `make url` | Print the URL for the current `PORT` / `HOST_BIND` |
 | `make logs` | Follow the app logs |
-| `make backup` | Consistent SQLite copy to `data/backups/marketlens-YYYYMMDD-HHMMSS.db` |
+| `make backup` | Postgres dump to `data/backups/marketlens-YYYYMMDD-HHMMSS.dump` |
+| `make restore FILE=…` | Restore a dump (replaces current data) |
+| `make psql` | Open a `psql` shell on the database |
+| `make migrate-sqlite` | Copy an old `data/marketlens.db` (from before Postgres) into Postgres |
+| `make destroy-db CONFIRM=yes` | Delete the database volume and **all** collected data |
 | `make stop` | Stop and remove the container (data in `./data` is kept) |
 | `make finbert` | Rebuild with local FinBERT sentiment |
-| `make test` | Run the test-suite inside the container |
+| `make test` | Run the test-suite inside the container (SQLite, then Postgres); `make test-sqlite` for SQLite only |
 | `make clean` | Stop and remove the locally built image |
 
 ### Deploying to a server (e.g. a small VPS)
@@ -118,7 +122,7 @@ make ps
 ```
 
 - The container restarts automatically (`restart: unless-stopped`), including after a reboot once Docker starts.
-- All state (SQLite database, Hugging Face model cache, backups) lives in `./data` on the host. Back it up or move it to migrate.
+- Collected data lives in the Postgres volume `marketlens_pgdata`; the Hugging Face model cache and backups live in `./data`. Run `make backup` regularly and copy `data/backups/` off the machine.
 - To update later, run `make deploy`.
 - To put it behind HTTPS, keep `HOST_BIND=127.0.0.1` and point a reverse proxy (Caddy, nginx) at `127.0.0.1:$PORT`. For example, a Caddyfile line: `marketlens.example.com { reverse_proxy 127.0.0.1:9000 }`. Add basic auth there if the server is public.
 - To run two copies on one machine, give each its own directory, port and container name: `CONTAINER_NAME=marketlens2 make run PORT=9001`.
@@ -137,6 +141,51 @@ make ps
 | `BRIEFING_TIME`, `TIMEZONE` | Weekday briefing time (default 07:30 America/New_York) | |
 
 Restart after editing `.env`: `make restart`.
+
+## Database (PostgreSQL)
+
+`make run` starts two containers: the app and **PostgreSQL 16**. All incrementally collected data is stored in Postgres, in the named Docker volume `marketlens_pgdata`. It survives `make stop`, `make restart` and rebuilds; only `make destroy-db CONFIRM=yes` removes it.
+
+What is stored (and collected incrementally, never re-downloaded in full):
+
+| Table(s) | Collected by | How it is incremental |
+|---|---|---|
+| `prices` | price refresh (every 30 min on weekdays, 09:00-17:00) | only bars since the last stored date are fetched; revised bars are upserted |
+| `news`, `social_posts`, `social_mentions` | hourly news and crowd refresh | new items only (deduplicated by id); mention ranks are kept per day, so crowd history builds up |
+| `congress_filings`, `congress_trades` | weekdays 07:15 and 18:15 | only filings (DocIDs) not seen before are downloaded and parsed |
+| `briefings`, `ai_summaries` | daily briefing, AI features | one row per run or per input; briefing history is kept |
+| `kv_cache`, `fetch_log` | everything | per-source "fetched at" stamps behind every "data as of" label |
+| `ingest_runs` | every scheduled job | run history: start, finish, status, rows added per table, errors |
+
+See what each job collected on the **Status** page (*Incremental collection runs*), or ask the database:
+
+```bash
+make psql
+```
+
+```sql
+select job, status, rows_added, detail, started_at from ingest_runs order by id desc limit 10;
+```
+
+**Connect from your machine** (for example with DBeaver or `psql`): host `127.0.0.1`, port `5433` (`POSTGRES_PORT`), user/database `marketlens`, and the password that `make run` generated in `.env` as `POSTGRES_PASSWORD`. The port is bound to `127.0.0.1` only. The password is read when the volume is first created, so to change it later either run `ALTER USER` inside the database or `make destroy-db` (deletes the data).
+
+**Back up and restore**
+
+```bash
+make backup
+```
+
+```bash
+make restore FILE=data/backups/marketlens-20261106-001121.dump
+```
+
+**Already ran an earlier version with the SQLite file?** After `make run`, copy that history into Postgres (safe to re-run; it aborts instead of mixing two different databases, and `--truncate` replaces):
+
+```bash
+make migrate-sqlite
+```
+
+**Use your own Postgres** (managed service or another server): set `DATABASE_URL=postgresql://user:password@host:5432/dbname` in `.env` and `make restart`. The bundled `postgres` container then simply goes unused. **Without Docker** (`make dev-backend`, tests) the app falls back to a local SQLite file unless `DATABASE_URL` is set. Both backends run the same queries (they are translated for Postgres automatically) and the whole test suite passes on both.
 
 ## Features
 
@@ -186,7 +235,7 @@ flowchart LR
   end
   subgraph Backend["FastAPI (Python)"]
     REG[providers/registry: DATA_MODE auto/live/mock]
-    DB[(SQLite cache: prices, kv, news, social, congress, AI outputs, briefings)]
+    DB[(PostgreSQL: prices, news, crowd, congress, AI outputs, briefings, run history)]
     SVC[services: indicators, signals, outlook, fundamentals, news+sentiment, social, congress, backtest, macro, briefing]
     AI[OpenAI gpt-6-luna: chat tools, summaries, research desk, briefing]
     SCH[APScheduler jobs]
@@ -199,7 +248,7 @@ flowchart LR
 ```
 
 - `backend/app/providers/`: one class per source behind the Protocols in `base.py`. To use a paid API (Polygon, FMP…), implement the Protocol and change the factory in `registry.py`.
-- `backend/app/services/`: all logic, cached in SQLite, with `as_of` / `source` metadata on everything.
+- `backend/app/services/`: all logic, stored in PostgreSQL (SQLite for native dev/tests), with `as_of` / `source` metadata on everything.
 - `backend/fixtures/`: real data captured by `scripts/capture_fixtures.py`, used for tests, `DATA_MODE=mock` and fallback.
 - `frontend/src/`: pages and ticker tabs. The built app is served by FastAPI from a single container.
 
@@ -245,16 +294,17 @@ Start with `make run` and then `make demo`, and open http://localhost:8000.
 11. **Ask AI** (needs a key): click the example *Compare NVDA and AMD on margins and valuation*, then expand **data lookups · sources · data as of**. Ask *Should I buy MSFT now?* and check the answer explains the tradeoffs without a recommendation. Ask *Chart AAPL vs MSFT over 3 months* for an inline chart.
 12. **Briefing**: click **Generate now**. The result is template-based without a key and AI-written with one. Check the history list on the left.
 13. **Macro**: six indicator cards, the rates chart, curve/CPI/unemployment charts, and upcoming events. Switch **1Y / 5Y / 10Y**.
-14. **Status**: key checklist with links, scheduled jobs (**Run now**), and cache freshness by source. Toggle **dark/light** in the header.
+14. **Status**: key checklist with links, scheduled jobs (**Run now**), the *Incremental collection runs* table (rows added per job and table, errors), and cache freshness by source. Toggle **dark/light** in the header.
 15. **Live mode on your machine**: set `SEC_USER_AGENT` (and optionally `FRED_API_KEY`, `FINNHUB_API_KEY`) in `.env`, run `make restart`, then on any ticker page check that the "data as of" badge no longer says *sample data*.
 
 ## Tests
 
-`make test` runs about 80 tests, offline and with no keys:
+`make test` runs about 90 tests twice (SQLite, then Postgres), offline and with no keys:
 - **Indicators**: against StockCharts reference values (RSI, EMA), plus hand-calculated ATR, Bollinger and VWAP checks, and causality checks.
 - **Backtests**: no look-ahead (next-open fills, truncation invariance, a perfect-foresight signal can't profit), exact fee and slippage math, metrics, look-ahead rejection for custom code, and walk-forward folds that don't overlap.
 - **EDGAR**: parsing of Apple's saved company-facts fixture, matching reported FY2024 figures and the derived Q4.
 - **Chat**: tool-call schemas valid for OpenAI strict mode, every tool running on sample data, and the tool loop with a fake client.
+- **Database**: SQL translation, upserts, bulk incremental writes, transactions, run history and the SQLite to Postgres migration (including conflict detection).
 - **Others**: signals, outlook trigger math, news and sentiment, crowd, House PTR parsing, the Congress maths, the briefing, the scheduler and the API endpoints.
 
 ## Project layout

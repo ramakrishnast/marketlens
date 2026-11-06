@@ -166,10 +166,8 @@ def generate(send_email: bool = True) -> dict[str, Any]:
             log.warning("AI briefing failed, using template: %s", e)
     if not content:
         content = render_template(facts)
-    with db.tx() as c:
-        cur = c.execute("INSERT INTO briefings(created_at, for_date, content_md, facts, generator, emailed) VALUES (?,?,?,?,?,0)",
-                        (db.now_iso(), facts["date"], content, json.dumps(facts, default=str), generator))
-        bid = cur.lastrowid
+    bid = db.insert_id("INSERT INTO briefings(created_at, for_date, content_md, facts, generator, emailed) VALUES (?,?,?,?,?,0)",
+                       (db.now_iso(), facts["date"], content, json.dumps(facts, default=str), generator))
     emailed = False
     if send_email and get_settings().smtp_host and get_settings().briefing_email_to:
         try:

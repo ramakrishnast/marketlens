@@ -1,4 +1,24 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ${CONTAINER_NAME:-marketlens}-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-marketlens}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketlens}
+      POSTGRES_DB: ${POSTGRES_DB:-marketlens}
+    volumes:
+      # all incrementally collected data lives in this named volume; it survives `make stop` / rebuilds
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      # for psql / BI tools on this machine only. Change POSTGRES_PORT if 5433 is taken; remove the line to keep it internal.
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
   app:
     build:
       context: .
@@ -6,15 +26,28 @@ services:
         INSTALL_FINBERT: ${INSTALL_FINBERT:-0}
     image: marketlens:latest
     container_name: ${CONTAINER_NAME:-marketlens}
+    depends_on:
+      postgres:
+        condition: service_healthy
     env_file:
       - path: .env
         required: false
     environment:
       DATA_DIR: /app/data
+      # The app stores everything in the postgres service above. Set DATABASE_URL in .env to use another Postgres instead.
+      DATABASE_URL: ${DATABASE_URL:-}
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: ${POSTGRES_USER:-marketlens}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketlens}
+      POSTGRES_DB: ${POSTGRES_DB:-marketlens}
     ports:
       # host side is configurable: PORT (default 8000) and HOST_BIND (default 127.0.0.1 = this machine only;
       # 0.0.0.0 = reachable from your network). The app always listens on 8000 inside the container.
       - "${HOST_BIND:-127.0.0.1}:${PORT:-8000}:8000"
     volumes:
-      - ./data:/app/data
+      - ./data:/app/data   # Hugging Face model cache, backups, and the legacy SQLite file (see make migrate-sqlite)
     restart: unless-stopped
+
+volumes:
+  pgdata:
+    name: ${CONTAINER_NAME:-marketlens}_pgdata

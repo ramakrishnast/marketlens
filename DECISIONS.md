@@ -69,3 +69,13 @@ Choices made while building MarketLens, with the reasoning. Newest sections are 
 |---|-----------------|-----|
 | 32 | Verified in the build sandbox from a fresh clone: `make test` (79 passed in Docker), `make run` (container healthy), `make demo`, every page screenshotted, and live gpt-6-luna calls for chat, the Research Desk and the briefing. The sandbox's HTTPS proxy needed a CA added inside the image; that override was **not committed** because a normal machine doesn't need it. | So you know what was actually exercised. |
 | 33 | `make finbert` (PyTorch + transformers) was not installed in the sandbox. The code path falls back to the lexicon scorer if loading fails. | ~2 GB download; listed as TODO. |
+
+## Postgres
+
+| # | Decision | Why |
+|---|----------|-----|
+| 34 | **PostgreSQL 16 is the default store in Docker** (named volume, health check, app waits for it). SQLite remains for native dev and the default test run, selected automatically when no `DATABASE_URL` / `POSTGRES_HOST` is set. | Durable, inspectable storage for data collected over time, reachable from SQL tools. SQLite keeps `make dev-backend` and tests dependency-free. |
+| 35 | **One set of SQL, translated for Postgres** (`?` to `%s`, `INSERT OR REPLACE/IGNORE` to `ON CONFLICT` using keys parsed from the schema, `LIKE` to `ILIKE`) rather than an ORM or two query sets. Timestamps stay ISO-8601 text. | Smallest change to ~40 existing statements; the suite runs unchanged on both backends, which is what keeps them from drifting. |
+| 36 | Postgres connection settings can be given as `POSTGRES_HOST/USER/PASSWORD/DB` (libpq keywords, so no URL-encoding of passwords) or a full `DATABASE_URL`, which wins. `make run` generates a random `POSTGRES_PASSWORD` when it first creates `.env`. The DB port is published on `127.0.0.1:5433` only. | Safe defaults without manual steps; an external database is a one-line change. |
+| 37 | Every scheduled collection job is wrapped in `ingest_runs` bookkeeping (status, errors, rows added per table). Runs left "running" by a crash are marked interrupted on the next start. | Makes incremental collection observable, so a silently failing source shows up on the Status page. |
+| 38 | `make migrate-sqlite` copies old history into Postgres. It is idempotent, and **refuses** to merge when integer ids collide with different rows already in Postgres (use an empty target or `--truncate`). | A naive `ON CONFLICT DO NOTHING` silently dropped a watchlist and re-attached its tickers to another list in testing. |

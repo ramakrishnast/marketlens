@@ -21,9 +21,12 @@ _sched: BackgroundScheduler | None = None
 
 def _safe(name: str, fn) -> Any:
     def run():
+        from .services import ingest
+
         try:
             log.info("job %s starting", name)
-            fn()
+            with ingest.run(name):
+                fn()
             log.info("job %s done", name)
         except Exception as e:  # never let a job crash the scheduler
             log.exception("job %s failed: %s", name, e)
@@ -60,6 +63,11 @@ def start_scheduler() -> BackgroundScheduler:
     s = get_settings()
     tz = s.timezone
     hh, mm = (s.briefing_time.split(":") + ["0"])[:2]
+    try:
+        from .services import ingest
+        ingest.mark_stale_running()
+    except Exception as e:  # pragma: no cover
+        log.warning("could not reconcile previous runs: %s", e)
     sched = BackgroundScheduler(timezone=tz, job_defaults={"coalesce": True, "max_instances": 1, "misfire_grace_time": 3600})
     sched.add_job(_safe("briefing", _briefing), CronTrigger(day_of_week="mon-fri", hour=int(hh), minute=int(mm), timezone=tz), id="briefing", name="Daily briefing")
     sched.add_job(_safe("prices", _prices), CronTrigger(day_of_week="mon-fri", hour="9-17", minute="*/30", timezone=tz), id="prices", name="Price refresh")

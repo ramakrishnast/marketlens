@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException
 
 from .. import db
 from ..config import get_settings
-from ..services import briefing, events, macro
+from ..services import briefing, events, ingest, macro
 from ..services.universe import MACRO_SERIES
 
 router = APIRouter(prefix="/api")
@@ -61,7 +61,8 @@ def data_status():
         g["count"] += 1
         g["oldest"] = min(g["oldest"], r["fetched_at"])
         g["sources"][r["source"]] = g["sources"].get(r["source"], 0) + 1
-    return {"groups": list(groups.values()), "jobs": jobs(), "db_path": str(get_settings().db_path)}
+    return {"groups": list(groups.values()), "jobs": jobs(), "database": db.describe(), "runs": ingest.recent(40),
+            "table_counts": ingest.counts()}
 
 
 @router.post("/status/run/{job_id}")

@@ -39,6 +39,14 @@ class Settings:
     data_mode: str = field(default_factory=lambda: (_env("DATA_MODE", "auto") or "auto").lower())
     data_dir: Path = field(default_factory=lambda: Path(_env("DATA_DIR", str(REPO_DIR / "data")) or "data"))
 
+    # Database: PostgreSQL if DATABASE_URL (or POSTGRES_HOST) is set, else a local SQLite file
+    _database_url: str | None = field(default_factory=lambda: _env("DATABASE_URL"))
+    postgres_host: str | None = field(default_factory=lambda: _env("POSTGRES_HOST"))
+    postgres_port: str = field(default_factory=lambda: _env("POSTGRES_PORT_INTERNAL", "5432") or "5432")
+    postgres_db: str = field(default_factory=lambda: _env("POSTGRES_DB", "marketlens") or "marketlens")
+    postgres_user: str = field(default_factory=lambda: _env("POSTGRES_USER", "marketlens") or "marketlens")
+    postgres_password: str = field(default_factory=lambda: _env("POSTGRES_PASSWORD", "") or "")
+
     # AI (OpenAI only)
     openai_api_key: str | None = field(default_factory=lambda: _env("OPENAI_API_KEY"))
     openai_model: str = field(default_factory=lambda: _env("OPENAI_MODEL", DEFAULT_OPENAI_MODEL) or DEFAULT_OPENAI_MODEL)
@@ -68,6 +76,18 @@ class Settings:
     allow_custom_strategies: bool = field(default_factory=lambda: _bool("ALLOW_CUSTOM_STRATEGIES", True))
     price_ttl_minutes: int = field(default_factory=lambda: int(_env("PRICE_TTL_MINUTES", "15") or 15))
     sentiment_model: str = field(default_factory=lambda: (_env("SENTIMENT_MODEL", "auto") or "auto").lower())
+
+    @property
+    def database_url(self) -> str | None:
+        """libpq connection string/URL, or None to use SQLite. POSTGRES_* parts need no URL-encoding."""
+        if self._database_url:
+            return self._database_url
+        if self.postgres_host:
+            from psycopg.conninfo import make_conninfo
+
+            return make_conninfo(host=self.postgres_host, port=self.postgres_port, dbname=self.postgres_db,
+                                 user=self.postgres_user, password=self.postgres_password)
+        return None
 
     @property
     def db_path(self) -> Path:

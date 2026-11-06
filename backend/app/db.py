@@ -1,14 +1,23 @@
-"""SQLite storage: one file, WAL mode, thread-local connections.
+"""Storage with two interchangeable backends behind one tiny API (tx / query / query_one / insert_id).
 
-Everything the app shows is cached here so free (rate-limited) sources are hit as little as possible.
+* PostgreSQL when DATABASE_URL (or POSTGRES_HOST + POSTGRES_*) is set: the Docker default, for durable
+  incremental data collection (prices, news, crowd, Congress filings, AI outputs, briefings, run history).
+* SQLite otherwise (one file, WAL): native development and the default test run.
+
+Services write SQLite-flavoured SQL (`?` placeholders, INSERT OR REPLACE / IGNORE). For Postgres it is
+translated automatically (`%s`, ON CONFLICT upserts, ILIKE), so there is a single set of queries.
 """
 from __future__ import annotations
 
+import atexit
 import json
+import re
 import sqlite3
 import threading
+import time
 from contextlib import contextmanager
 from datetime import datetime, timezone
+from functools import lru_cache
 from typing import Any, Iterator
 
 from .config import get_settings
@@ -73,18 +82,105 @@ CREATE TABLE IF NOT EXISTS congress_trades (
 CREATE INDEX IF NOT EXISTS idx_congress_member ON congress_trades(member);
 CREATE INDEX IF NOT EXISTS idx_congress_ticker ON congress_trades(ticker);
 CREATE TABLE IF NOT EXISTS followed_members (member TEXT PRIMARY KEY, added_at TEXT);
+CREATE TABLE IF NOT EXISTS ingest_runs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, job TEXT NOT NULL, started_at TEXT NOT NULL, finished_at TEXT,
+    status TEXT NOT NULL, rows_added INTEGER DEFAULT 0, detail TEXT, error TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_ingest_runs_job ON ingest_runs(job, started_at);
 """
 
-_local = threading.local()
-_init_lock = threading.Lock()
-_initialized: set[str] = set()
+# ---- backend selection -------------------------------------------------------------------
+
+def backend() -> str:
+    return "postgres" if get_settings().database_url else "sqlite"
+
+
+def describe() -> dict[str, Any]:
+    s = get_settings()
+    if backend() == "postgres":
+        from psycopg.conninfo import conninfo_to_dict
+
+        d = conninfo_to_dict(s.database_url)
+        return {"backend": "postgres", "target": f"{d.get('host', 'localhost')}:{d.get('port', 5432)}/{d.get('dbname', '')}"}
+    return {"backend": "sqlite", "target": str(s.db_path)}
+
+
+# ---- schema metadata (parsed from SCHEMA) and SQL translation ------------------------------
+
+def _split_top(body: str) -> list[str]:
+    parts, depth, cur = [], 0, ""
+    for ch in body:
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+        if ch == "," and depth == 0:
+            parts.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    if cur.strip():
+        parts.append(cur.strip())
+    return parts
+
+
+def _parse_tables() -> dict[str, dict[str, list[str]]]:
+    out: dict[str, dict[str, list[str]]] = {}
+    for m in re.finditer(r"CREATE TABLE IF NOT EXISTS (\w+) \((.*?)\n?\);", SCHEMA, re.S):
+        cols, pk = [], []
+        for part in _split_top(m.group(2)):
+            if part.upper().startswith("PRIMARY KEY"):
+                pk = [c.strip() for c in part[part.index("(") + 1 : part.rindex(")")].split(",")]
+            else:
+                name = part.split()[0]
+                cols.append(name)
+                if "PRIMARY KEY" in part.upper():
+                    pk = [name]
+        out[m.group(1)] = {"cols": cols, "pk": pk}
+    return out
+
+
+TABLES = _parse_tables()
+_INSERT_OR = re.compile(r"^\s*INSERT\s+OR\s+(REPLACE|IGNORE)\s+INTO\s+(\w+)\s*(\(([^)]*)\))?", re.I)
+
+
+@lru_cache(maxsize=512)
+def to_postgres(sql: str) -> str:
+    """Translate the SQLite-flavoured SQL used by the services into PostgreSQL."""
+    suffix = ""
+    m = _INSERT_OR.match(sql)
+    if m:
+        mode, table = m.group(1).upper(), m.group(2)
+        meta = TABLES[table]
+        if mode == "IGNORE":
+            suffix = " ON CONFLICT DO NOTHING"
+        else:
+            cols = [c.strip() for c in m.group(4).split(",")] if m.group(4) else meta["cols"]
+            sets = [f"{c}=EXCLUDED.{c}" for c in cols if c not in meta["pk"]]
+            suffix = (f" ON CONFLICT ({', '.join(meta['pk'])}) DO UPDATE SET {', '.join(sets)}" if sets else " ON CONFLICT DO NOTHING")
+        sql = re.sub(r"^\s*INSERT\s+OR\s+(REPLACE|IGNORE)\s+INTO", "INSERT INTO", sql, flags=re.I)
+    sql = sql.rstrip().rstrip(";") + suffix
+    sql = sql.replace("%", "%%").replace("?", "%s")
+    return re.sub(r"\bLIKE\b", "ILIKE", sql)  # SQLite LIKE is case-insensitive; Postgres LIKE is not
+
+
+def schema_for_postgres() -> str:
+    s = SCHEMA.replace("INTEGER PRIMARY KEY AUTOINCREMENT", "BIGSERIAL PRIMARY KEY")
+    return re.sub(r"\bREAL\b", "DOUBLE PRECISION", s)
 
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
-def get_conn() -> sqlite3.Connection:
+# ---- SQLite backend ------------------------------------------------------------------------
+
+_local = threading.local()
+_init_lock = threading.Lock()
+_initialized: set[str] = set()
+
+
+def _sqlite_conn() -> sqlite3.Connection:
     path = str(get_settings().db_path)
     conn = getattr(_local, "conn", None)
     if conn is None or getattr(_local, "path", None) != path:
@@ -101,17 +197,99 @@ def get_conn() -> sqlite3.Connection:
     return conn
 
 
+# ---- PostgreSQL backend --------------------------------------------------------------------
+
+_pool = None
+_pool_url: str | None = None
+_pool_lock = threading.Lock()
+
+
+class _PgConn:
+    """Gives a psycopg connection the same execute/executemany surface the services use on sqlite3."""
+
+    def __init__(self, conn) -> None:
+        self._c = conn
+
+    def execute(self, sql: str, params: tuple | list = ()):
+        return self._c.execute(to_postgres(sql), params)
+
+    def executemany(self, sql: str, rows) -> None:
+        with self._c.cursor() as cur:
+            cur.executemany(to_postgres(sql), list(rows))
+
+
+def _pg_pool():
+    global _pool, _pool_url
+    url = get_settings().database_url
+    with _pool_lock:
+        if _pool is not None and _pool_url == url:
+            return _pool
+        if _pool is not None:
+            _pool.close()
+        from psycopg.rows import dict_row
+        from psycopg_pool import ConnectionPool
+
+        pool = ConnectionPool(url, min_size=1, max_size=12, open=False, check=ConnectionPool.check_connection,
+                              kwargs={"row_factory": dict_row, "autocommit": True})
+        deadline = time.monotonic() + 45
+        while True:  # the database container may still be starting
+            try:
+                pool.open(wait=True, timeout=5)
+                break
+            except Exception:
+                pool.close()
+                if time.monotonic() > deadline:
+                    raise
+                time.sleep(1.5)
+                pool = ConnectionPool(url, min_size=1, max_size=12, open=False, check=ConnectionPool.check_connection,
+                                      kwargs={"row_factory": dict_row, "autocommit": True})
+        _pool, _pool_url = pool, url
+        with pool.connection() as conn:
+            conn.execute("SELECT pg_advisory_lock(727001)")  # several processes may initialise at once
+            try:
+                for stmt in schema_for_postgres().split(";"):
+                    if stmt.strip():
+                        conn.execute(stmt)
+            finally:
+                conn.execute("SELECT pg_advisory_unlock(727001)")
+        return pool
+
+
 def reset_connection() -> None:
+    global _pool, _pool_url
     conn = getattr(_local, "conn", None)
     if conn is not None:
         conn.close()
     _local.conn = None
     _initialized.clear()
+    with _pool_lock:
+        if _pool is not None:
+            _pool.close()
+        _pool, _pool_url = None, None
 
+
+atexit.register(reset_connection)  # close the pool cleanly on interpreter exit
+
+
+def wipe_postgres() -> None:
+    """Test helper: drop everything and let the schema be recreated on next use."""
+    with _pg_pool().connection() as conn:
+        conn.execute("DROP SCHEMA public CASCADE")
+        conn.execute("CREATE SCHEMA public")
+    reset_connection()
+
+
+# ---- common API ----------------------------------------------------------------------------
 
 @contextmanager
-def tx() -> Iterator[sqlite3.Connection]:
-    conn = get_conn()
+def tx() -> Iterator[Any]:
+    """One atomic transaction. Yields an object with execute() / executemany()."""
+    if backend() == "postgres":
+        with _pg_pool().connection() as conn:
+            with conn.transaction():
+                yield _PgConn(conn)
+        return
+    conn = _sqlite_conn()
     try:
         yield conn
         conn.commit()
@@ -121,12 +299,24 @@ def tx() -> Iterator[sqlite3.Connection]:
 
 
 def query(sql: str, params: tuple | list = ()) -> list[dict[str, Any]]:
-    return [dict(r) for r in get_conn().execute(sql, params).fetchall()]
+    if backend() == "postgres":
+        with _pg_pool().connection() as conn:
+            return [dict(r) for r in conn.execute(to_postgres(sql), params).fetchall()]
+    return [dict(r) for r in _sqlite_conn().execute(sql, params).fetchall()]
 
 
 def query_one(sql: str, params: tuple | list = ()) -> dict[str, Any] | None:
-    r = get_conn().execute(sql, params).fetchone()
-    return dict(r) if r else None
+    rows = query(sql, params)
+    return rows[0] if rows else None
+
+
+def insert_id(sql: str, params: tuple | list = ()) -> int:
+    """INSERT one row into a table with an integer `id` key and return that id."""
+    if backend() == "postgres":
+        with tx() as c:
+            return int(c.execute(sql + " RETURNING id", params).fetchone()["id"])
+    with tx() as c:
+        return int(c.execute(sql, params).lastrowid)
 
 
 # ---- generic JSON cache -------------------------------------------------------------------

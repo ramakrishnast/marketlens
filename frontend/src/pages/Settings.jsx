@@ -41,7 +41,24 @@ export default function Settings() {
             <tr key={j.id}><td>{j.name}</td><td className="font-mono text-xs">{j.next_run ? `next: ${fmt.datetime(j.next_run)}` : '—'}</td><td><button className="btn text-xs" onClick={() => run(j.id)}>Run now</button></td></tr>))}
         </tbody></table>
       </Card>
-      <Card title="Cached data freshness" subtitle={data.data?.db_path}>
+      <Card title="Incremental collection runs" subtitle={`Stored in ${data.data?.database?.backend} (${data.data?.database?.target}). Each scheduled job records what it added.`}
+        right={<button className="btn text-xs" onClick={data.reload}>↻</button>}>
+        {data.data?.runs.length === 0 && <div className="text-sm text-muted">No runs yet. They appear after a scheduled job runs, or click <b>Run now</b> above.</div>}
+        {data.data?.runs.length > 0 && (
+          <div className="overflow-x-auto"><table className="data w-full text-sm">
+            <thead><tr><th>Job</th><th>Started</th><th>Status</th><th>Rows added</th><th>Detail</th></tr></thead>
+            <tbody>{data.data.runs.map((r) => (
+              <tr key={r.id}><td className="font-mono text-xs">{r.job}</td><td className="text-xs">{fmt.datetime(r.started_at)}</td>
+                <td className={r.status === 'ok' ? 'text-up' : r.status === 'running' ? 'text-warn' : 'text-down'} title={r.error || ''}>{r.status}</td>
+                <td className="num">{r.rows_added ?? 0}</td>
+                <td className="text-xs text-muted">{r.error || Object.entries(r.detail || {}).map(([k, v]) => `${k} ${v > 0 ? '+' : ''}${v}`).join(' · ') || '—'}</td></tr>))}</tbody>
+          </table></div>
+        )}
+        <div className="flex flex-wrap gap-x-5 gap-y-1 mt-3 text-xs text-muted font-mono">
+          {Object.entries(data.data?.table_counts || {}).map(([k, v]) => <span key={k}>{k}: {v.toLocaleString()}</span>)}
+        </div>
+      </Card>
+      <Card title="Cached data freshness">
         <table className="data w-full text-sm">
           <thead><tr><th>Kind</th><th>Items</th><th>Most recent fetch</th><th>Oldest fetch</th><th>Sources</th></tr></thead>
           <tbody>{data.data?.groups.map((g) => (
