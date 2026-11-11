@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter, HTTPException
 
-from .. import db
+from .. import collect, db
 from ..config import get_settings
 from ..services import briefing, events, ingest, macro
 from ..services.universe import MACRO_SERIES
@@ -61,7 +61,11 @@ def data_status():
         g["count"] += 1
         g["oldest"] = min(g["oldest"], r["fetched_at"])
         g["sources"][r["source"]] = g["sources"].get(r["source"], 0) + 1
-    return {"groups": list(groups.values()), "jobs": jobs(), "database": db.describe(), "runs": ingest.recent(40),
+    return {"groups": list(groups.values()), "jobs": jobs(), "database": db.describe(), "runs": ingest.recent(60),
+            "daily": {"last": ingest.last("daily"), "running": ingest.is_running("daily"),
+                      "steps": [{"step": k, "label": v[0], "last": ingest.last(f"daily:{k}")} for k, v in collect.STEPS.items()],
+                      "schedule": {"time": get_settings().daily_collect_time, "days": get_settings().daily_collect_days,
+                                   "timezone": get_settings().timezone}},
             "table_counts": ingest.counts()}
 
 

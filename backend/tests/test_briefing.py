@@ -33,7 +33,8 @@ def test_scheduler_registers_jobs(fresh_db):
     s = scheduler.start_scheduler()
     try:
         ids = {j["id"] for j in scheduler.jobs()}
-        assert ids == {"briefing", "prices", "news", "congress"}
+        assert ids == {"daily", "briefing", "prices", "news", "congress"}
+        assert "hour='18', minute='30'" in str(s.get_job("daily").trigger)
         b = s.get_job("briefing")
         assert "mon-fri" in str(b.trigger)
     finally:

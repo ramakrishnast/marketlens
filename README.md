@@ -88,9 +88,10 @@ PORT=9000 HOST_BIND=127.0.0.1 docker compose up -d --build
 | `make demo` | Start, then load sample watchlists and warm every page |
 | `make restart` | Rebuild and recreate (after changing `.env`, `PORT`, `HOST_BIND`) |
 | `make deploy` | `git pull`, back up the database, rebuild, restart (`make update` is an alias) |
-| `make ps` | Status and health of the app and the database containers |
+| `make ps` | Status and health of the app, worker and database containers |
 | `make url` | Print the URL for the current `PORT` / `HOST_BIND` |
-| `make logs` | Follow the app logs |
+| `make logs` | Follow the app logs (`make logs-worker` for the batch worker) |
+| `make collect` | Run the daily collection now (`ONLY=prices,news` for some steps) |
 | `make backup` | Postgres dump to `data/backups/marketlens-YYYYMMDD-HHMMSS.dump` |
 | `make restore FILE=…` | Restore a dump (replaces current data) |
 | `make psql` | Open a `psql` shell on the database |
@@ -144,7 +145,7 @@ Restart after editing `.env`: `make restart`.
 
 ## Database (PostgreSQL)
 
-`make run` starts two containers: the app and **PostgreSQL 16**. All incrementally collected data is stored in Postgres, in the named Docker volume `marketlens_pgdata`. It survives `make stop`, `make restart` and rebuilds; only `make destroy-db CONFIRM=yes` removes it.
+`make run` starts the app, the batch worker and **PostgreSQL 16**. All incrementally collected data is stored in Postgres, in the named Docker volume `marketlens_pgdata`. It survives `make stop`, `make restart` and rebuilds; only `make destroy-db CONFIRM=yes` removes it.
 
 What is stored (and collected incrementally, never re-downloaded in full):
 
@@ -186,6 +187,49 @@ make migrate-sqlite
 ```
 
 **Use your own Postgres** (managed service or another server): set `DATABASE_URL=postgresql://user:password@host:5432/dbname` in `.env` and `make restart`. The bundled `postgres` container then simply goes unused. **Without Docker** (`make dev-backend`, tests) the app falls back to a local SQLite file unless `DATABASE_URL` is set. Both backends run the same queries (they are translated for Postgres automatically) and the whole test suite passes on both.
+
+## Daily batch job
+
+`make run` starts three containers: **app** (pages and API), **worker** (scheduled jobs) and **postgres**. The worker collects every source into Postgres; the app only reads Postgres and serves it to the frontend, so each page shows data "as of" the last collection.
+
+```mermaid
+flowchart LR
+  W[worker: python -m app.worker] -->|incremental upserts| PG[(PostgreSQL)]
+  W -->|fetch| S[yfinance, SEC EDGAR, FRED, news, crowd, House Clerk]
+  A[app: FastAPI /api] -->|read| PG
+  FE[React frontend] --> A
+```
+
+The **daily collection** runs on weekdays at 18:30 US/Eastern, after the market close. Change it in `.env` with `DAILY_COLLECT_TIME=18:30`, `DAILY_COLLECT_DAYS=mon-fri` (for example `mon-sun`) and `TIMEZONE`, then `make restart`. It has one step per source:
+
+| Step | Source | What is added each day |
+|---|---|---|
+| `prices` | yfinance | new daily bars for watchlist tickers, index strip and sector ETFs |
+| `fundamentals` | SEC EDGAR | refreshed company facts and filing lists |
+| `news` | Finnhub / Alpha Vantage / Google News RSS / IR feeds | new headlines, scored for sentiment |
+| `social` | ApeWisdom, StockTwits, Reddit | today's mention ranks and new posts |
+| `macro` | FRED | latest observations |
+| `congress` | House Clerk | filings not seen before |
+
+Each step is incremental, safe to re-run (upserts) and isolated: if one source fails, the others still finish, and the failure is recorded. Smaller top-ups (prices every 30 minutes in market hours, hourly news) and the morning briefing also run in the worker.
+
+Run it yourself at any time:
+
+```bash
+make collect
+```
+
+```bash
+make collect ONLY=prices,news
+```
+
+```bash
+make logs-worker
+```
+
+The command exits with code 1 if any step failed, so it also works from cron or CI. See results on the **Status** page (*Daily collection*: last run, status and rows added per source) or in the `ingest_runs` table. Without Docker, `python -m app.collect` does the same against whatever database is configured.
+
+**Databricks (not built yet).** The planned design keeps Postgres serving the app and adds an optional final step that uploads each day's new rows to Delta tables through a Databricks SQL warehouse (`DATABRICKS_HOST`, `DATABRICKS_HTTP_PATH`, `DATABRICKS_TOKEN`), skipped when those are not set. Every table already has a natural key and the job records what each run added, so the upload can be an incremental `MERGE`.
 
 ## Features
 

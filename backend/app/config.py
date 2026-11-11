@@ -65,6 +65,11 @@ class Settings:
     timezone: str = field(default_factory=lambda: _env("TIMEZONE", "America/New_York") or "America/New_York")
     briefing_time: str = field(default_factory=lambda: _env("BRIEFING_TIME", "07:30") or "07:30")
     scheduler_enabled: bool = field(default_factory=lambda: _bool("SCHEDULER_ENABLED", True))
+    # Daily batch collection (see app/collect.py): time and days in TIMEZONE
+    daily_collect_time: str = field(default_factory=lambda: _env("DAILY_COLLECT_TIME", "18:30") or "18:30")
+    daily_collect_days: str = field(default_factory=lambda: _env("DAILY_COLLECT_DAYS", "mon-fri") or "mon-fri")
+    # "all" = web + scheduler in one process (native dev) | "web" = pages/API only | "worker" = scheduler only
+    role: str = field(default_factory=lambda: (_env("MARKETLENS_ROLE", "all") or "all").lower())
     smtp_host: str | None = field(default_factory=lambda: _env("SMTP_HOST"))
     smtp_port: int = field(default_factory=lambda: int(_env("SMTP_PORT", "587") or 587))
     smtp_user: str | None = field(default_factory=lambda: _env("SMTP_USER"))

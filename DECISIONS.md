@@ -79,3 +79,13 @@ Choices made while building MarketLens, with the reasoning. Newest sections are 
 | 36 | Postgres connection settings can be given as `POSTGRES_HOST/USER/PASSWORD/DB` (libpq keywords, so no URL-encoding of passwords) or a full `DATABASE_URL`, which wins. `make run` generates a random `POSTGRES_PASSWORD` when it first creates `.env`. The DB port is published on `127.0.0.1:5433` only. | Safe defaults without manual steps; an external database is a one-line change. |
 | 37 | Every scheduled collection job is wrapped in `ingest_runs` bookkeeping (status, errors, rows added per table). Runs left "running" by a crash are marked interrupted on the next start. | Makes incremental collection observable, so a silently failing source shows up on the Status page. |
 | 38 | `make migrate-sqlite` copies old history into Postgres. It is idempotent, and **refuses** to merge when integer ids collide with different rows already in Postgres (use an empty target or `--truncate`). | A naive `ON CONFLICT DO NOTHING` silently dropped a watchlist and re-attached its tickers to another list in testing. |
+
+## Daily batch job
+
+| # | Decision | Why |
+|---|----------|-----|
+| 39 | Scheduled work moved to a separate **worker** container (`python -m app.worker`, same image). The web container runs with `MARKETLENS_ROLE=web` and never starts a scheduler; natively the default role `all` keeps both in one process. | A slow batch no longer competes with page requests, and jobs can't run twice if the web app is ever scaled. |
+| 40 | One **daily collection** (weekdays 18:30 ET, configurable) with a step per source, each recorded as `daily:<step>` under a parent `daily` run. Steps are isolated; the batch is `partial` if some fail and the CLI exits 1. A batch already running is not started again. | You chose after-close on weekdays. Isolation means one broken free source doesn't cost the day's other data. |
+| 41 | The Status page computes next-run times from the job triggers and "Run now" runs the job in the web process, so both work even though the scheduler lives in the worker. | No cross-container messaging needed for a single-user tool. |
+| 42 | Pages can still trigger a live fetch when cached data is older than its TTL (unchanged). | Keeps a ticker you just added usable before the next batch. A strict "database only" read mode is a possible follow-up. |
+| 43 | **Databricks is not built**: you chose Postgres-only for now. Planned shape: Postgres keeps serving the app; an optional last step uploads new rows to Delta via a SQL warehouse. | No workspace was available to test against; unverified upload code would be worse than none. |

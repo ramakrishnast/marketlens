@@ -28,7 +28,7 @@ async def lifespan(app: FastAPI):
     log.info("MarketLens starting: DATA_MODE=%s, AI=%s, db=%s", s.data_mode,
              f"OpenAI {s.openai_model}" if s.ai_enabled else "off (no OPENAI_API_KEY)", db.describe()["target"])
     sched = None
-    if s.scheduler_enabled and os.environ.get("MARKETLENS_TESTING") != "1":
+    if s.scheduler_enabled and s.role == "all" and os.environ.get("MARKETLENS_TESTING") != "1":
         try:
             from .scheduler import start_scheduler
             sched = start_scheduler()

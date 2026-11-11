@@ -28,22 +28,48 @@ def counts() -> dict[str, int]:
 
 
 @contextmanager
-def run(job: str) -> Iterator[None]:
-    """Record one collection run: `with ingest.run("news"): ...`. Errors are recorded and re-raised."""
+def run(job: str) -> Iterator[dict[str, Any]]:
+    """Record one collection run: `with ingest.run("news") as rec: ...`. Errors are recorded and re-raised.
+
+    The yielded dict lets the job add a `note` (stored in detail) or override the final `status` (e.g. "partial").
+    """
     before = counts()
     rid = db.insert_id("INSERT INTO ingest_runs(job, started_at, status) VALUES (?,?,?)", (job, db.now_iso(), "running"))
+    rec: dict[str, Any] = {}
     status, error = "ok", None
     try:
-        yield
+        yield rec
     except Exception as e:
         status, error = "error", f"{type(e).__name__}: {e}"[:500]
         raise
     finally:
         after = counts()
-        delta = {t: after[t] - before[t] for t in TRACKED if after[t] != before[t]}
+        delta: dict[str, Any] = {t: after[t] - before[t] for t in TRACKED if after[t] != before[t]}
+        rows = sum(v for v in delta.values() if v > 0)
+        if rec.get("note"):
+            delta["note"] = str(rec["note"])[:300]
+        if status == "ok" and rec.get("status"):
+            status = rec["status"]
         with db.tx() as c:
             c.execute("UPDATE ingest_runs SET finished_at=?, status=?, rows_added=?, detail=?, error=? WHERE id=?",
-                      (db.now_iso(), status, sum(v for v in delta.values() if v > 0), json.dumps(delta), error, rid))
+                      (db.now_iso(), status, rows, json.dumps(delta), error, rid))
+
+
+def is_running(job: str, max_hours: float = 3) -> bool:
+    """True if a run of this job started recently and has not finished (guards against overlapping runs)."""
+    from datetime import datetime, timedelta, timezone
+
+    row = db.query_one("SELECT started_at FROM ingest_runs WHERE job=? AND status='running' ORDER BY id DESC LIMIT 1", (job,))
+    if not row:
+        return False
+    return datetime.now(timezone.utc) - datetime.fromisoformat(row["started_at"]) < timedelta(hours=max_hours)
+
+
+def last(job: str) -> dict[str, Any] | None:
+    row = db.query_one("SELECT * FROM ingest_runs WHERE job=? AND status<>'running' ORDER BY id DESC LIMIT 1", (job,))
+    if row:
+        row["detail"] = json.loads(row["detail"]) if row.get("detail") else {}
+    return row
 
 
 def recent(limit: int = 40) -> list[dict[str, Any]]:

@@ -34,11 +34,30 @@ export default function Settings() {
               <td className="text-xs text-muted">{KEY_HELP[k]?.[0]}</td><td>{KEY_HELP[k]?.[1] && <a className="text-xs text-accent hover:underline" href={KEY_HELP[k][1]} target="_blank" rel="noreferrer">get key ↗</a>}</td></tr>))}
         </tbody></table>
       </Card>
-      <Card title="Scheduled jobs" right={msg && <span className="text-xs text-accent">{msg}</span>}>
-        {data.data?.jobs.length === 0 && <div className="text-sm text-muted">Scheduler is off (SCHEDULER_ENABLED=false).</div>}
+      <Card title="Daily collection" subtitle={data.data?.daily ? `Collects every source into the database ${data.data.daily.schedule.days} at ${data.data.daily.schedule.time} (${data.data.daily.schedule.timezone}). Pages read what it stored.` : ''}
+        right={<div className="flex items-center gap-2">{msg && <span className="text-xs text-accent">{msg}</span>}<button className="btn text-xs" onClick={() => run('daily')}>Run now</button><button className="btn text-xs" onClick={data.reload}>↻</button></div>}>
+        {data.data?.daily && <>
+          <div className="text-sm mb-2">
+            {data.data.daily.running ? <span className="text-warn">Running now…</span> : data.data.daily.last ? <>
+              Last run {fmt.datetime(data.data.daily.last.started_at)} ({fmt.ago(data.data.daily.last.started_at)}): <span className={data.data.daily.last.status === 'ok' ? 'text-up' : 'text-down'}>{data.data.daily.last.status}</span>
+              {data.data.daily.last.detail?.note ? `, ${data.data.daily.last.detail.note}` : ''}</> : <span className="text-muted">Not run yet. Click Run now, or run make collect.</span>}
+          </div>
+          <table className="data w-full text-sm">
+            <thead><tr><th>Source</th><th>Last run</th><th>Status</th><th>Rows added</th><th>Result</th></tr></thead>
+            <tbody>{data.data.daily.steps.map((st) => (
+              <tr key={st.step}><td>{st.label}</td>
+                <td className="text-xs">{st.last ? `${fmt.datetime(st.last.started_at)} (${fmt.ago(st.last.started_at)})` : '—'}</td>
+                <td className={!st.last ? 'text-muted' : st.last.status === 'ok' ? 'text-up' : 'text-down'}>{st.last?.status || 'never'}</td>
+                <td className="num">{st.last?.rows_added ?? '—'}</td>
+                <td className="text-xs text-muted">{st.last?.error || st.last?.detail?.note || ''}</td></tr>))}</tbody>
+          </table>
+        </>}
+      </Card>
+      <Card title="Scheduled jobs">
         <table className="data w-full text-sm"><tbody>
           {data.data?.jobs.map((j) => (
-            <tr key={j.id}><td>{j.name}</td><td className="font-mono text-xs">{j.next_run ? `next: ${fmt.datetime(j.next_run)}` : '—'}</td><td><button className="btn text-xs" onClick={() => run(j.id)}>Run now</button></td></tr>))}
+            <tr key={j.id}><td>{j.name}</td><td className="font-mono text-xs">{!j.enabled ? 'scheduler off' : j.next_run ? `next: ${fmt.datetime(j.next_run)}` : '—'}</td>
+              <td className="text-xs text-muted">{j.runs_in}</td><td><button className="btn text-xs" onClick={() => run(j.id)}>Run now</button></td></tr>))}
         </tbody></table>
       </Card>
       <Card title="Incremental collection runs" subtitle={`Stored in ${data.data?.database?.backend} (${data.data?.database?.target}). Each scheduled job records what it added.`}

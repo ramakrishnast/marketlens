@@ -12,7 +12,7 @@ HOST_BIND ?= $(or $(call ENV_VAL,HOST_BIND),127.0.0.1)
 export PORT HOST_BIND
 URL_HOST = $(if $(filter 0.0.0.0,$(HOST_BIND)),localhost,$(HOST_BIND))
 
-.PHONY: run demo test test-sqlite stop logs restart deploy update ps url backup restore psql migrate-sqlite destroy-db finbert fixtures shell clean dev-backend dev-frontend test-local
+.PHONY: collect logs-worker run demo test test-sqlite stop logs restart deploy update ps url backup restore psql migrate-sqlite destroy-db finbert fixtures shell clean dev-backend dev-frontend test-local
 
 .env:
 	@cp .env.example .env
@@ -20,7 +20,7 @@ URL_HOST = $(if $(filter 0.0.0.0,$(HOST_BIND)),localhost,$(HOST_BIND))
 		sed "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$$pw/" .env > .env.tmp && mv .env.tmp .env
 	@echo "Created .env from .env.example with a random database password (add your keys there)"
 
-run: .env ## Build and start the app + PostgreSQL
+run: .env ## Build and start the app, the batch worker and PostgreSQL
 	$(COMPOSE) up -d --build
 	@echo ""
 	@echo "MarketLens is starting at http://$(URL_HOST):$(PORT)  (bound to $(HOST_BIND):$(PORT); logs: make logs)"
@@ -53,7 +53,7 @@ deploy: .env ## Pull the latest code, back up the database, rebuild and restart
 
 update: deploy
 
-ps: ## Container status and health (app + postgres)
+ps: ## Container status and health (app, worker, postgres)
 	$(COMPOSE) ps
 
 url:
@@ -83,8 +83,14 @@ destroy-db: ## DELETE the Postgres volume and ALL collected data: make destroy-d
 	@test "$(CONFIRM)" = "yes" || { echo "This permanently deletes all collected data. Re-run with CONFIRM=yes"; exit 1; }
 	$(COMPOSE) down -v
 
+collect: ## Run the daily collection now: make collect  |  make collect ONLY=prices,news
+	$(COMPOSE) exec worker python -m app.collect $(if $(ONLY),--only $(ONLY),)
+
 logs:
 	$(COMPOSE) logs -f --tail=200 app
+
+logs-worker: ## Follow the batch worker (daily collection, briefing, top-ups)
+	$(COMPOSE) logs -f --tail=200 worker
 
 finbert: .env ## Rebuild with local FinBERT sentiment (~2 GB download)
 	INSTALL_FINBERT=1 $(COMPOSE) up -d --build

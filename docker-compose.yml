@@ -34,6 +34,7 @@ services:
         required: false
     environment:
       DATA_DIR: /app/data
+      MARKETLENS_ROLE: web   # pages and API only; scheduled jobs run in the worker service
       # The app stores everything in the postgres service above. Set DATABASE_URL in .env to use another Postgres instead.
       DATABASE_URL: ${DATABASE_URL:-}
       POSTGRES_HOST: postgres
@@ -46,6 +47,34 @@ services:
       - "${HOST_BIND:-127.0.0.1}:${PORT:-8000}:8000"
     volumes:
       - ./data:/app/data   # Hugging Face model cache, backups, and the legacy SQLite file (see make migrate-sqlite)
+    restart: unless-stopped
+
+  # Batch worker: runs the daily collection (DAILY_COLLECT_TIME), the briefing and the intraday top-ups.
+  # Same image as the app; it writes to Postgres and the web app reads from it.
+  worker:
+    image: marketlens:latest
+    container_name: ${CONTAINER_NAME:-marketlens}-worker
+    command: ["python", "-m", "app.worker"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      app:
+        condition: service_started   # the app service builds the shared image
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATA_DIR: /app/data
+      MARKETLENS_ROLE: worker
+      DATABASE_URL: ${DATABASE_URL:-}
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: ${POSTGRES_USER:-marketlens}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketlens}
+      POSTGRES_DB: ${POSTGRES_DB:-marketlens}
+    healthcheck:
+      disable: true
+    volumes:
+      - ./data:/app/data
     restart: unless-stopped
 
 volumes:
